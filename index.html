@@ -4,1444 +4,1815 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>inline critical CSS example</title>
-    <link rel="preload" href="assets/fonts/poppins-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/poppins-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
     <style>
-     body {  
-    font-family:var(--bs-body-font-family);
-    font-size:1rem;
-    font-weight:var(--bs-body-font-weight);
-    line-height:calc(1.05rem + .6vw);
-    color:var(--bs-body-color);
-    text-align:var(--bs-body-text-align);
-    background-color:var(--bs-body-bg);
-  }  
-@media (min-width: 1200px){     
-  body {  
-    line-height:1.5rem;
-  }  
-}  
-body { 
-/* CSS Variables that may have been missed get put on body */ 
-    --bs-font-sans-serif:  "Poppins",sans-serif;  
-    --bs-font-sans-serif: "Poppins",sans-serif; 
-    --bs-body-font-family:  var(--bs-font-sans-serif);  
-    --TypographyBodyMdFontSize: 1rem; 
-    --bs-body-font-size:  var(--TypographyBodyMdFontSize);  
-    --bs-body-font-weight:  400;  
-    --bs-body-line-height:  1.5;  
-    --bs-body-color:  #000;  
-    --bs-body-bg:  #fff;  
-    --bs-heading-color:  inherit;  
-    --bs-link-color-rgb:  13,110,253;  
-    --bs-link-hover-color-rgb:  10,88,202;  
-    --bs-gutter-x:  1.5rem;  
-    --bs-gutter-y:  0;  
-    --bs-gutter-x:  1.5rem;  
-    --bs-gutter-y:  0;  
-    --bs-gutter-x:  1.5rem;  
-    --bs-gutter-y:  0;  
-    --BrandMcafeeColor: #ff1c1c; 
-    --ToggleColor:  var(--BrandMcafeeColor);  
-    --bs-btn-padding-x:  1.5rem;  
-    --bs-btn-padding-y:  .625rem;  
-    --bs-btn-font-size:  var(--TypographyBodyMdFontSize);  
-    --bs-btn-font-weight:  400;  
-    --bs-btn-line-height:  1.5;  
-    --bs-body-color: #000; 
-    --bs-btn-color:  var(--bs-body-color);  
-    --bs-btn-bg:  transparent;  
-    --ButtonBorderWidth: .0625rem; 
-    --bs-btn-border-width:  var(--ButtonBorderWidth);  
-    --bs-btn-border-color:  transparent;  
-    --ButtonBorderRadius: 32px; 
-    --bs-btn-border-radius:  var(--ButtonBorderRadius);  
-    --bs-btn-hover-border-color:  transparent;  
-    --bs-btn-focus-box-shadow:  0 0 0 .25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);  
-    --bs-link-hover-color-rgb: 10,88,202; 
-    --bs-link-color-rgb:  var(--bs-link-hover-color-rgb);  
-    --bs-btn-padding-x:  0; 
-    --ToggleColor:  var(--BrandMcafeeColor);  
-    --bs-badge-padding-x:  .5rem;  
-    --bs-badge-padding-y:  .25rem;  
-    --bs-badge-font-size:  .875rem;  
-    --bs-badge-font-weight:  600;  
-    --BadgeTextColor: #ffffff; 
-    --bs-badge-color:  var(--BadgeTextColor);  
-    --BadgeBorderRadius: 4.75px; 
-    --bs-badge-border-radius:  var(--BadgeBorderRadius);  
-    --bs-badge-font-weight:  normal; 
-} 
-
-* { 
-    box-sizing: border-box;
-} 
-
-body { 
-    margin: 0; 
-    font-family: var(--bs-body-font-family); 
-    font-size: var(--bs-body-font-size); 
-    font-weight: var(--bs-body-font-weight); 
-    line-height: var(--bs-body-line-height); 
-    color: var(--bs-body-color); 
-    text-align: var(--bs-body-text-align); 
-    background-color: var(--bs-body-bg); 
-    -webkit-text-size-adjust: 100%;
-} 
-
-body { 
-    font-size: 1rem; 
-    line-height: calc(1.05rem + .6vw);
-} 
-
-@media (min-width: 1200px){ 
-  body { 
-    line-height: 1.5rem;
-  } 
-}     
-
-:root { 
-    --Gap: 1rem; 
-    --ContentSpacer: 1.5rem; 
-    --FontWeightBold: 600; 
-    --RadiusXxs: .375rem; 
-    --SectionSpacer: clamp(1.75rem, 0vw + 1.75rem, 3.125rem); 
-    --SpacerXs: .5rem; 
-    --SpacerSm: .75rem; 
-    --Spacer: 1rem; 
-    --SpacerXl: 1.5rem; 
-    --Shadow: 1px 1px 16px 0px rgba(0, 0, 0, .06),4px 4px 12px 0px rgba(0, 0, 0, .12); 
-    --CollapseCardTitlePadding: 0 .75rem .25rem; 
-    --PriceRowFinalColor: #000000; 
-    --PriceRowFinalFontSize: calc(1.275rem + 0.3vw); 
-    --PriceRowFinalFontWeight: 600; 
-    --PriceRowRetailColor: #a19c9c; 
-    --PriceRowRetailFontSize: 1.25rem; 
-    --PriceRowRetailFontWeight: 400; 
-    --PriceRowDiscountColor: #ff1c1c; 
-    --PriceRowDiscountFontSize: .875rem; 
-    --PriceRowDiscountFontWeight: 600; 
-    --PriceRowDiscountDescColor: #ff1c1c; 
-    --PriceRowDiscountDescFontSize: .875rem; 
-    --PriceRowDiscountDescFontWeight: 600; 
-    --PriceRowPlanDescColor: #000000; 
-    --PriceRowPlanDescFontSize: .875rem; 
-    --PriceRowPlanDescFontWeight: 400; 
-    --RadioContainerShadow: var(--Shadow); 
-    --RadioWidth: 1.5rem; 
-    --RadioHeight: 1.5rem; 
-    --RadioBtnBadgeFontSize: 11px; 
-    --RadioBtnPadding: 1rem; 
-    --RadioBtnBackgroundColor: #f9f1ec; 
-    --TextBody: var(--bs-body-color); 
-    --TextAttention: #C01818; 
-    --ToggleThickness: 2px; 
-    --ToggleWidth: 10px; 
-    --ToggleHeight: 10px; 
-    --ToggleColor: #000000; 
-    --ToggleWidthSm: 7px; 
-    --ToggleHeightSm: 7px; 
-    --ToggleThicknessSm: 1px; 
-    --BackgroundBackgroundColor: #ffffff; 
-    --BackgroundAccentBackgroundColor: #f9f1ec; 
-    --BadgeTextColor: #ffffff; 
-    --BadgeSuccessBackgroundColor: #3da288; 
-    --BadgeSuccessBorderColor: rgba(0, 0, 0, 0); 
-    --BadgeSuccessTextColor: #ffffff; 
-    --BrandMcafeeColor: #ff1c1c; 
-    --ButtonBackgroundColor: #ff1c1c; 
-    --ButtonTextColor: #ffffff; 
-    --ButtonHoverBackgroundColor: #c01818; 
-    --ButtonHoverBorderColor: #c01818; 
-    --ButtonHoverTextColor: #ffffff; 
-    --LinkTextColor: #000000; 
-    --LinkHoverTextColor: #ea1010; 
-    --RadioBackgroundColor: #ffffff; 
-    --RadioBorderColor: #b1babf; 
-    --RadioSelectedBorderColor: #ff1c1c; 
-    --TypographyHeaderXxxlColor: #000; 
-    --TypographyHeaderLgColor: #000; 
-    --TypographyBodyXlColor: #000; 
-    --BadgeBorderRadius: 4.75px; 
-    --ButtonBorderWidth: .0625rem; 
-    --ButtonBorderRadius: 32px; 
-    --RadioBorderWidth: .125rem; 
-    --RadioBorderRadius: 48px; 
-    --TypographyHeaderXxxlFontSize: 6rem; 
-    --TypographyHeaderLgFontSize: 2.5rem; 
-    --TypographyHeaderXxxsFontSize: 1.125rem; 
-    --TypographyBodyMdFontSize: 1rem; 
-    --ButtonBorder: none; 
-    --TypographyHeaderXxxlStrongFontWeight: 600; 
-    --TypographyHeaderLgStrongFontWeight: 600; 
-} 
-
-:root { 
-    --Gap: 1rem; 
-    --ContentSpacer: 1.5rem; 
-    --SectionSpacer: clamp(1.5rem, 1.554vw + 1.003rem, 3.125rem); 
-    --SpacerXs: .5rem; 
-    --SpacerSm: .75rem; 
-    --Spacer: 1rem; 
-    --SpacerXl: 1.5rem; 
-    --RadiusXxs: .375rem; 
-    --Shadow: 1px 1px 16px 0px rgba(0, 0, 0, .06),4px 4px 12px 0px rgba(0, 0, 0, .12); 
-    --FontWeightBold: 600; 
-    --CollapseCardTitlePadding: 0 .75rem .25rem; 
-    --PriceRowFinalColor: #000000; 
-    --PriceRowFinalFontSize: 1.5rem; 
-    --PriceRowFinalFontWeight: 600; 
-    --PriceRowRetailColor: #a19c9c; 
-    --PriceRowRetailFontSize: 1.25rem; 
-    --PriceRowRetailFontWeight: 400; 
-    --PriceRowDiscountColor: #ff1c1c; 
-    --PriceRowDiscountFontSize: .875rem; 
-    --PriceRowDiscountFontWeight: 600; 
-    --PriceRowDiscountDescColor: #ff1c1c; 
-    --PriceRowDiscountDescFontSize: .875rem; 
-    --PriceRowDiscountDescFontWeight: 600; 
-    --PriceRowPlanDescColor: #000000; 
-    --PriceRowPlanDescFontSize: .875rem; 
-    --PriceRowPlanDescFontWeight: 400; 
-    --RadioBtnBadgeFontSize: 11px; 
-    --RadioBtnPadding: 1rem; 
-    --RadioBtnBackgroundColor: #f9f1ec; 
-    --ToggleThickness: 2px; 
-    --ToggleWidth: 10px; 
-    --ToggleHeight: 10px; 
-    --ToggleColor: #000000; 
-    --ToggleWidthSm: 7px; 
-    --ToggleHeightSm: 7px; 
-    --ToggleThicknessSm: 2px; 
-    --BackgroundBackgroundColor: #ffffff; 
-    --BackgroundAccentBackgroundColor: #f9f1ec; 
-    --BadgeTextColor: #ffffff; 
-    --BadgeSuccessBackgroundColor: #3da288; 
-    --BadgeSuccessBorderColor: rgba(0, 0, 0, 0); 
-    --BadgeSuccessTextColor: #ffffff; 
-    --BrandMcafeeColor: #ff1c1c; 
-    --ButtonBackgroundColor: #ff1c1c; 
-    --ButtonTextColor: #ffffff; 
-    --ButtonHoverBackgroundColor: #c01818; 
-    --ButtonHoverBorderColor: #c01818; 
-    --ButtonHoverTextColor: #ffffff; 
-    --LinkTextColor: #000000; 
-    --LinkHoverTextColor: #ea1010; 
-    --RadioBackgroundColor: #ffffff; 
-    --RadioBorderColor: #b1babf; 
-    --RadioSelectedBorderColor: #ff1c1c; 
-    --TypographyHeaderXxxlColor: #000; 
-    --TypographyHeaderLgColor: #000; 
-    --TypographyBodyXlColor: #000; 
-    --BadgeBorderRadius: 4.75px; 
-    --ButtonBorderWidth: .0625rem; 
-    --ButtonBorderRadius: 32px; 
-    --RadioBorderWidth: .125rem; 
-    --RadioBorderRadius: 3rem; 
-    --RadioWidth: 1.25em; 
-    --RadioHeight: 1.25em; 
-    --RadioSelectedWidth: .1875em; 
-    --TypographyHeaderXxxlFontSize: 6rem; 
-    --TypographyHeaderLgFontSize: 2.5rem; 
-    --TypographyHeaderXxxsFontSize: 1.125rem; 
-    --TypographyBodyMdFontSize: 1rem; 
-    --ButtonBorder: none; 
-    --TypographyHeaderXxxlStrongFontWeight: 600; 
-    --TypographyHeaderLgStrongFontWeight: 600; 
-} 
-
-:root,[data-bs-theme="light"] { 
-    --bs-font-sans-serif: "Poppins",sans-serif; 
-    --bs-body-font-family: var(--bs-font-sans-serif); 
-    --bs-body-font-size: var(--TypographyBodyMdFontSize); 
-    --bs-body-font-weight: 400; 
-    --bs-body-line-height: 1.5; 
-    --bs-body-color: #000; 
-    --bs-body-bg: #fff; 
-    --bs-heading-color: inherit; 
-    --bs-link-color-rgb: 13,110,253; 
-    --bs-link-hover-color-rgb: 10,88,202; 
-} 
-
-@media (prefers-reduced-motion: no-preference){ 
-  :root { 
-    scroll-behavior: smooth;
-  } 
-}     
-
-@media (min-width: 1200px){ 
-  :root { 
-    --PriceRowFinalFontSize: 1.5rem;
-  } 
-}     
-
-*,:after,:before { 
-    box-sizing: border-box;
-} 
-
-.section  { 
-    --bs-gutter-x: 1.5rem; 
-    --bs-gutter-y: 0; 
-    width: 100%; 
-    padding-right: calc(var(--bs-gutter-x)*.5); 
-    padding-left: calc(var(--bs-gutter-x)*.5); 
-    margin-right: auto; 
-    margin-left: auto;
-} 
-
-@media (min-width: 576px){ 
-  .section  { 
-    max-width: 540px;
-  } 
-}     
-
-@media (min-width: 768px){ 
-  .section  { 
-    max-width: 720px;
-  } 
-}     
-
-@media (min-width: 992px){ 
-  .section  { 
-    max-width: 960px;
-  } 
-}     
-
-@media (min-width: 1200px){ 
-  .section  { 
-    max-width: 1140px;
-  } 
-}     
-
-.section-color.primary { 
-    background: var(--BackgroundBackgroundColor);
-} 
-
-@media (min-width: 1240px){ 
-  .section  { 
-    max-width: 1240px;
-  } 
-}     
-
-.section-content { 
-    --bs-gutter-x: 1.5rem; 
-    --bs-gutter-y: 0; 
-    width: 100%; 
-    padding-right: calc(var(--bs-gutter-x)*.5); 
-    padding-left: calc(var(--bs-gutter-x)*.5); 
-    margin-right: auto; 
-    margin-left: auto;
-} 
-
-@media (min-width: 576px){ 
-  .section-content { 
-    max-width: 540px;
-  } 
-}     
-
-@media (min-width: 768px){ 
-  .section-content { 
-    max-width: 720px;
-  } 
-}     
-
-@media (min-width: 992px){ 
-  .section-content { 
-    max-width: 960px;
-  } 
-}     
-
-@media (min-width: 1200px){ 
-  .section-content { 
-    max-width: 1140px;
-  } 
-}     
-
-.section-content { 
-    padding-block: var(--SectionSpacer);
-} 
-
-@media (min-width: 1240px){ 
-  .section-content  { 
-    max-width: 1240px;
-  } 
-}     
-
-.row { 
-    --bs-gutter-x: 1.5rem; 
-    --bs-gutter-y: 0; 
-    display: flex; 
-    flex-wrap: wrap; 
-    margin-top: calc(-1*var(--bs-gutter-y)); 
-    margin-right: calc(-.5*var(--bs-gutter-x)); 
-    margin-left: calc(-.5*var(--bs-gutter-x));
-} 
-
-.flexcolumn-row { 
-    gap: var(--Gap);
-} 
-
-.section-content > .cmp-flex-column > div > .row  { 
-    justify-content: space-between;
-} 
-
-.row > *  { 
-    flex-shrink: 0; 
-    width: 100%; 
-    max-width: 100%; 
-    padding-right: calc(var(--bs-gutter-x)*.5); 
-    padding-left: calc(var(--bs-gutter-x)*.5); 
-    margin-top: var(--bs-gutter-y);
-} 
-
-@media (min-width: 768px){ 
-  .flexcolumn-col { 
-    flex: 1 0 0%;
-  } 
-}     
-
-.flexcolumn-col { 
-    overflow: hidden;
-} 
-
-.section-content > .cmp-flex-column > div > .row > .flexcolumn-col:first-child  { 
-    flex: 0 0 auto; 
-    width: 50%;
-} 
-
-.section-content > .cmp-flex-column > div > .row > .flexcolumn-col:first-child  { 
-    width: 49%;
-} 
-
-.section-content > .cmp-flex-column > div > .row > .flexcolumn-col:nth-child(2)  { 
-    flex: 0 0 auto; 
-    width: 50%;
-} 
-
-.section-content > .cmp-flex-column > div > .row > .flexcolumn-col:nth-child(2)  { 
-    width: 49%;
-} 
-
-.cmp-addtocart  { 
-    margin-block: var(--ContentSpacer);
-} 
-
-.feature-title  { 
-    font-size: var(--TypographyHeaderXxxsFontSize); 
-    margin-bottom: var(--Spacer);
-} 
-
-@media (min-width: 1200px){ 
-  .feature-title  { 
-    white-space: nowrap;
-  } 
-}     
-
-.collapse-card .collapse-hdr  { 
-    font-weight: var(--FontWeightBold); 
-    padding-block: var(--SpacerXs);
-} 
-
-.collapse-card .collapse-title  { 
-    font-size: .75rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-.collapse-card .collapse-title  { 
-    background: var(--BackgroundAccentBackgroundColor); 
-    margin: var(--SpacerXs) var(--SpacerXs) var(--SpacerXs) 0; 
-    padding: var(--CollapseCardTitlePadding); 
-    border-radius: var(--RadiusXxs); 
-    display: inline-grid; 
-    vertical-align: top;
-} 
-
-@media (min-width: 992px){ 
-  .collapse-card .collapse-title  { 
-    width: 48%;
-  } 
-}     
-
-@media (min-width: 1200px){ 
-  .collapse-card .collapse-title  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.collapse-card .collapse-title.collapse-disabled  { 
-    filter: grayscale(1);
-} 
-
-.features-post-content  { 
-    font-size: .875rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-@media (min-width: 1200px){ 
-  .features-post-content  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.features-post-content  { 
-    margin-top: 1rem; 
-    font-weight: var(--FontWeightBold);
-} 
-
-.cmp-accordionsection .accordion-button::after, .cmp-collapse .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .features-post-content::after, .navbar .dropdown-toggle::after, .plan-compare-card .collapse-btn::after, .plan-compare-table .collapse-btn::after, .three-plan-comparator.var1 .feature-collapse a::after,.u-toggle,.u-toggle-primary-xs,.u-toggle-sm { 
-    content: ""; 
-    display: inline-block; 
-    transform: rotate(45deg); 
-    margin-left: var(--SpacerXs); 
-    color: var(--ToggleColor);
-} 
-
-.cmp-collapse .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .features-post-content::after, .plan-compare-card .collapse-btn::after, .plan-compare-table .collapse-btn::after,.u-toggle-sm { 
-    border-bottom: var(--ToggleThicknessSm) solid; 
-    border-right: var(--ToggleThicknessSm) solid; 
-    width: var(--ToggleWidthSm); 
-    height: var(--ToggleHeightSm);
-} 
-
-.features-with-dynamic-radio-and-dropdown .features-post-content::after { 
-    --ToggleColor: var(--BrandMcafeeColor); 
-    vertical-align: 3px;
-} 
-
-h1 { 
-    font-size: var(--TypographyHeaderXxxlFontSize);
-} 
-
-h1 { 
-    font-weight: var(--TypographyHeaderXxxlStrongFontWeight); 
-    color: var(--TypographyHeaderXxxlColor); 
-    font-size: calc(1.5rem + 6vw); 
-    line-height: calc(1.6rem + 7.2vw);
-} 
-
-@media (min-width: 1200px){ 
-  h1 { 
-    font-size: 6rem;
-  } 
-
-  h1 { 
-    line-height: 7rem;
-  } 
-}     
-
-.hero-title ,h1 { 
-    margin-top: 0; 
-    margin-bottom: .5rem; 
-    font-weight: 500; 
-    line-height: 1.2; 
-    color: var(--bs-heading-color);
-} 
-
-.hero-title  { 
-    font-size: var(--TypographyHeaderLgFontSize);
-} 
-
-.hero-title  { 
-    font-weight: var(--TypographyHeaderLgStrongFontWeight); 
-    color: var(--TypographyHeaderLgColor); 
-    font-size: calc(1.15rem + 1.8vw); 
-    line-height: calc(1.2rem + 2.4vw);
-} 
-
-@media (min-width: 1200px){ 
-  .hero-title  { 
-    font-size: 2.5rem;
-  } 
-
-  .hero-title  { 
-    line-height: 3rem;
-  } 
-}     
-
-.hero-title  { 
-    font-weight: 400; 
-    color: var(--HeroTitleColor);
-} 
-
-.hero-description  { 
-    margin-block: var(--ContentSpacer);
-} 
-
-.section-title  { 
-    font-size: .875rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-@media (min-width: 1200px){ 
-  .section-title  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.section-title  { 
-    font-weight: var(--FontWeightBold);
-} 
-
-.radio-section-button  { 
-    margin-block: var(--ContentSpacer);
-} 
-
-.section-description  { 
-    font-size: calc(1.0125rem + .15vw); 
-    line-height: calc(1.075rem + .9vw);
-} 
-
-@media (min-width: 1200px){ 
-  .section-description  { 
-    font-size: 1.125rem;
-  } 
-
-  .section-description  { 
-    line-height: 1.75rem;
-  } 
-}     
-
-.section-description  { 
-    font-weight: var(--FontWeightBold); 
-    white-space: nowrap;
-} 
-
-a { 
-    color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1)); 
-    text-decoration: underline;
-} 
-
-a { 
-    color: var(--LinkTextColor);
-} 
-
-.btn { 
-    --bs-btn-padding-x: 1.5rem; 
-    --bs-btn-padding-y: .625rem; 
-    --bs-btn-font-size: var(--TypographyBodyMdFontSize); 
-    --bs-btn-font-weight: 400; 
-    --bs-btn-line-height: 1.5; 
-    --bs-btn-color: var(--bs-body-color); 
-    --bs-btn-bg: transparent; 
-    --bs-btn-border-width: var(--ButtonBorderWidth); 
-    --bs-btn-border-color: transparent; 
-    --bs-btn-border-radius: var(--ButtonBorderRadius); 
-    --bs-btn-hover-border-color: transparent; 
-    --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(var(--bs-btn-focus-shadow-rgb), .5); 
-    display: inline-block; 
-    padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x); 
-    font-family: var(--bs-btn-font-family); 
-    font-size: var(--bs-btn-font-size); 
-    font-weight: var(--bs-btn-font-weight); 
-    line-height: var(--bs-btn-line-height); 
-    color: var(--bs-btn-color); 
-    text-align: center; 
-    text-decoration: none; 
-    vertical-align: middle; 
-    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color); 
-    border-radius: var(--bs-btn-border-radius); 
-    background-color: var(--bs-btn-bg);
-} 
-
-.cmp-addtocart .btn  { 
-    min-width: 10.875rem;
-} 
-
-.cmp-addtocart .btn ,.button-label  { 
-    background: var(--ButtonBackgroundColor); 
-    border: var(--ButtonBorder); 
-    color: var(--ButtonTextColor);
-} 
-
-a:hover { 
-    --bs-link-color-rgb: var(--bs-link-hover-color-rgb); 
-    text-decoration: none;
-} 
-
-a:hover { 
-    color: var(--LinkHoverTextColor);
-} 
-
-.btn:hover { 
-    color: var(--bs-btn-hover-color); 
-    background-color: var(--bs-btn-hover-bg); 
-    border-color: var(--bs-btn-hover-border-color);
-} 
-
- .cmp-addtocart .btn:hover, .features-with-dynamic-radio-and-dropdown .button-label:hover { 
-    background-color: var(--ButtonHoverBackgroundColor); 
-    border-color: var(--ButtonHoverBorderColor); 
-    color: var(--ButtonHoverTextColor);
-} 
-
-.offer-terms  { 
-    font-size: .875rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-@media (min-width: 1200px){ 
-  .offer-terms  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.offer-terms  { 
-    margin-block: var(--ContentSpacer);
-} 
-
-.payment-cards  { 
-    height: 26px;
-} 
-
-.os-supported  { 
-    font-size: .875rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-@media (min-width: 1200px){ 
-  .os-supported  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.os-supported  { 
-    margin-block: var(--ContentSpacer);
-} 
-
-.collapse-card a  { 
-    text-decoration: none; 
-    color: initial;
-} 
-
-.collapse-card .collapse-btn  { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding-block: var(--SpacerSm) var(--SpacerXs);
-} 
-
-.cmp-accordionsection .accordion-button::after, .cmp-collapse .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .features-post-content::after, .navbar .dropdown-toggle::after, .plan-compare-card .collapse-btn::after, .plan-compare-table .collapse-btn::after, .three-plan-comparator.var1 .feature-collapse a::after, .u-toggle, .u-toggle-primary-xs, .u-toggle-sm { 
-    content: ""; 
-    display: inline-block; 
-    transform: rotate(45deg); 
-    margin-left: var(--SpacerXs); 
-    color: var(--ToggleColor);
-} 
-
-.cmp-accordionsection .accordion-button::after, .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-btn::after, .navbar .dropdown-toggle::after, .three-plan-comparator.var1 .feature-collapse a::after,.u-toggle { 
-    border-bottom: var(--ToggleThickness) solid; 
-    border-right: var(--ToggleThickness) solid; 
-    width: var(--ToggleWidth); 
-    height: var(--ToggleHeight);
-} 
-
-.collapse:not(.show) { 
-    display: none;
-} 
-
-.cmp-accordionsection .accordion-button::after, .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-btn::after, .navbar .dropdown-toggle::after, .three-plan-comparator.var1 .feature-collapse a::after, .u-toggle { 
-    border-bottom: var(--ToggleThickness) solid; 
-    border-right: var(--ToggleThickness) solid; 
-    width: var(--ToggleWidth); 
-    height: var(--ToggleHeight);
-} 
-
-.collapse-card .collapse-title.collapse-disabled .collapse-btn  { 
-    filter: invert(.5);
-} 
-
-.collapse-card .collapse-title.collapse-disabled .collapse-body  { 
-    filter: invert(.5);
-} 
-
-b { 
-    font-weight: bolder;
-} 
-
-b { 
-    font-weight: 600;
-} 
-
-.me-1 { 
-    margin-right: .25rem!important;
-} 
-
-.pay-icon { 
-    width: 39px; 
-    height: 25px; 
-    border: .2px solid #abb2c3; 
-    border-radius: 2px; 
-    display: inline-block; 
-    background: url(https://www.mcafee.com/etc.clientlibs/ecom-aemcs-frontend/npcld/themes/assets/resources/img/payment-sprite-icons.svg) no-repeat;
-} 
-
-.visa { 
-    background-position: 0 0;
-} 
-
-.mastercard { 
-    background-position: -268px 0;
-} 
-
-.americanexpress { 
-    background-position: -191px 0;
-} 
-
-.discover { 
-    background-position: -229px 0;
-} 
-
-.paypal { 
-    background-position: -153px 0;
-} 
-
-.collapse-card .collapse-btn-content  { 
-    display: flex; 
-    align-items: center; 
-    text-align: start; 
-    font-weight: var(--FontWeightBold);
-} 
-
-.fc-attention { 
-    color: var(--TextAttention);
-} 
-
-fieldset { 
-    min-width: 0; 
-    padding: 0; 
-    margin: 0; 
-    border: 0;
-} 
-
-.collapse-icon { 
-    margin-right: var(--SpacerXs);
-} 
-
-legend { 
-    float: left; 
-    width: 100%; 
-    padding: 0; 
-    margin-bottom: .5rem; 
-    font-size: calc(1.05rem + .6vw); 
-    line-height: inherit;
-} 
-
-@media (min-width: 1200px){ 
-  legend { 
-    font-size: 1.5rem;
-  } 
-}     
-
-.d-none { 
-    display: none!important;
-} 
-
-legend + *  { 
-    clear: left;
-} 
-
-svg { 
-    vertical-align: middle;
-} 
-
-label { 
-    display: inline-block;
-} 
-
-.cmp-radiobutton .radio-button  { 
-    display: flex; 
-    align-items: center; 
-    padding: var(--RadioBtnPadding); 
-    border-bottom: 1px dotted var(--RadioBorderColor);
-} 
-
-.cmp-radiobutton .radio-button:has(input:checked)  { 
-    background: var(--RadioBtnBackgroundColor);
-} 
-
-.d-flex { 
-    display: flex!important;
-} 
-
-.flex-column-reverse { 
-    flex-direction: column-reverse!important;
-} 
-
-.cmp-collapse .collapse-container  { 
-    flex-direction: column-reverse!important;
-} 
-
-.cmp-radiobutton .radio-col1  { 
-    flex: 0 0 auto; 
-    width: 8.33333333%;
-} 
-
-.cmp-radiobutton .radio-col1  { 
-    margin-right: calc(var(--Spacer)*.25);
-} 
-
-.cmp-radiobutton .radio-col2  { 
-    flex: 0 0 auto; 
-    width: 91.66666667%;
-} 
-
-input { 
-    margin: 0; 
-    font-family: inherit; 
-    font-size: inherit; 
-    line-height: inherit;
-} 
-
-.cmp-radiobutton .radio-input[type="radio"]  { 
-    -webkit-appearance: none; 
-    -moz-appearance: none; 
-    appearance: none; 
-    border: var(--RadioBorderWidth) solid var(--RadioSelectedBorderColor); 
-    border-radius: var(--RadioBorderRadius); 
-    height: var(--RadioWidth); 
-    width: var(--RadioHeight); 
-    display: block;
-} 
-
-.cmp-radiobutton .radio-input[type="radio"]:checked  { 
-    background-color: var(--RadioSelectedBorderColor); 
-    box-shadow: inset 0 0 0 var(--RadioSelectedWidth) var(--RadioBackgroundColor);
-} 
-
-.cmp-collapse .expand-description  { 
-    font-size: .875rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-@media (min-width: 1200px){ 
-  .cmp-collapse .expand-description  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.cmp-collapse .expand-description  { 
-    padding-top: var(--Spacer); 
-    margin-left: var(--SpacerXl);
-} 
-
-.cmp-collapse .collapse-btn  { 
-    --bs-btn-padding-x: 0;
-} 
-
-.cmp-collapse .collapse-btn  { 
-    font-size: .875rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-@media (min-width: 1200px){ 
-  .cmp-collapse .collapse-btn  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.cmp-collapse .collapse-btn  { 
-    padding: 0; 
-    display: inline-block; 
-    text-align: left; 
-    font-weight: var(--FontWeightBold); 
-    margin: 0; 
-    border: 0; 
-    display: flex;
-} 
-
-.cmp-collapse .collapse-btn::after { 
-    vertical-align: 2px;
-} 
-
-.cmp-collapse .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn::after, .features-with-dynamic-radio-and-dropdown .features-post-content::after, .plan-compare-card .collapse-btn::after, .plan-compare-table .collapse-btn::after, .u-toggle-sm { 
-    border-bottom: var(--ToggleThicknessSm) solid; 
-    border-right: var(--ToggleThicknessSm) solid; 
-    width: var(--ToggleWidthSm); 
-    height: var(--ToggleHeightSm);
-} 
-
-.features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn::after { 
-    --ToggleColor: var(--BrandMcafeeColor); 
-    position: relative; 
-    top: 5px;
-} 
-
-.price-row { 
-    display: flex; 
-    align-items: center;
-} 
-
-.price-row  { 
-    justify-content: space-between; 
-    align-items: baseline;
-} 
-
-@media (min-width: 1200px){ 
-  .price-row  { 
-    white-space: nowrap;
-  } 
-}     
-
-.radioitem-left  { 
-    display: inline-flex; 
-    align-items: center;
-} 
-
-.radioitem-right  { 
-    display: inline-flex; 
-    align-items: center;
-} 
-
-.radio-title  { 
-    font-size: calc(1.025rem + .3vw); 
-    line-height: calc(1.075rem + .9vw); 
-    color: var(--TypographyBodyXlColor);
-} 
-
-@media (min-width: 1200px){ 
-  .radio-title  { 
-    font-size: 1.25rem;
-  } 
-
-  .radio-title  { 
-    line-height: 1.75rem;
-  } 
-}     
-
-.radio-title  { 
-    font-weight: var(--FontWeightBold);
-} 
-
-.radio-badge  { 
-    --bs-badge-padding-x: .5rem; 
-    --bs-badge-padding-y: .25rem; 
-    --bs-badge-font-size: .875rem; 
-    --bs-badge-font-weight: 600; 
-    --bs-badge-color: var(--BadgeTextColor); 
-    --bs-badge-border-radius: var(--BadgeBorderRadius); 
-    display: inline-block; 
-    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x); 
-    font-size: var(--bs-badge-font-size); 
-    font-weight: var(--bs-badge-font-weight); 
-    line-height: 1; 
-    color: var(--bs-badge-color); 
-    text-align: center; 
-    white-space: nowrap; 
-    vertical-align: baseline; 
-    border-radius: var(--bs-badge-border-radius);
-} 
-
-.cmp-radiobutton .radio-badge:empty  { 
-    display: none;
-} 
-
-.radio-badge  { 
-    background: var(--BadgeSuccessBackgroundColor); 
-    border: 1px solid var(--BadgeSuccessBorderColor); 
-    color: var(--BadgeSuccessTextColor);
-} 
-
-.radio-badge  { 
-    margin-left: .5rem; 
-    font-size: var(--RadioBtnBadgeFontSize); 
-    --bs-badge-font-weight: normal;
-} 
-
-.radio-badge:empty  { 
-    display: none;
-} 
-
-.price-row .final-price  { 
-    color: var(--PriceRowFinalColor); 
-    font-size: var(--PriceRowFinalFontSize); 
-    font-weight: var(--PriceRowFinalFontWeight);
-} 
-
-.final-price  { 
-    padding-left: var(--SpacerSm);
-} 
-
-.price-row .plan-description  { 
-    color: var(--PriceRowPlanDescColor); 
-    font-size: var(--PriceRowPlanDescFontSize); 
-    font-weight: var(--PriceRowPlanDescFontWeight);
-} 
-
-.plan-description  { 
-    font-size: .875rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-@media (min-width: 1200px){ 
-  .plan-description  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.plan-description  { 
-    padding-right: .5rem; 
-    white-space: nowrap;
-} 
-
-.payment-description  { 
-    font-size: .75rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-.payment-description  { 
-    text-align: end; 
-    margin-left: var(--SpacerXs);
-} 
-
-@media (min-width: 1200px){ 
-  .payment-description  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.payment-description  { 
-    white-space: pre-wrap;
-} 
-
-.price-row .retail-price  { 
-    color: var(--PriceRowRetailColor); 
-    font-size: var(--PriceRowRetailFontSize); 
-    font-weight: var(--PriceRowRetailFontWeight); 
-    text-decoration: line-through;
-} 
-
-.price-row .discount-description  { 
-    color: var(--PriceRowDiscountDescColor); 
-    font-size: var(--PriceRowDiscountDescFontSize); 
-    font-weight: var(--PriceRowDiscountDescFontWeight);
-} 
-
-.discount-description  { 
-    font-size: .875rem; 
-    line-height: calc(1.025rem + .3vw);
-} 
-
-@media (min-width: 1200px){ 
-  .discount-description  { 
-    line-height: 1.25rem;
-  } 
-}     
-
-.discount-description  { 
-    color: var(--BrandMcafeeColor); 
-    font-weight: var(--FontWeightBold);
-} 
-
-.price-row .discount-price  { 
-    color: var(--PriceRowDiscountColor); 
-    font-size: var(--PriceRowDiscountFontSize); 
-    font-weight: var(--PriceRowDiscountFontWeight);
-} 
-
-img { 
-    vertical-align: middle;
-} 
-
-img { 
-    max-width: 100%; 
-    height: auto;
-} 
-
+      :root {
+        --Gap: 1rem;
+        --GutterSm: 0.75rem;
+        --Gutter: clamp(1.25rem, 1.673vw + 0.715rem, 3rem);
+        --ContentSpacer: 1.5rem;
+        --SectionSpacer: clamp(1.5rem, 1.554vw + 1.003rem, 3.125rem);
+        --SectionHdrSpacer: 2.5rem;
+        --SpacerXs: 0.5rem;
+        --SpacerSm: 0.75rem;
+        --Spacer: 1rem;
+        --SpacerLg: 1.25rem;
+        --SpacerXl: 1.5rem;
+        --SpacerXxl: 2rem;
+        --SpacerXxxl: clamp(1.75rem, 1.195vw + 1.368rem, 3rem);
+        --RadiusXxs: 0.375rem;
+        --RadiusXs: 0.5rem;
+        --RadiusSm: 0.75rem;
+        --Radius: 1rem;
+        --RadiusLg: 1.25rem;
+        --RadiusXl: 1.5rem;
+        --RadiusXxl: 2rem;
+        --ShadowSm: 2px 2px 2px 0px rgba(0, 0, 0, 0.12), -0.25px -0.25px 1px 0px rgba(0, 0, 0, 0.06), 1px 1px 8px 0px rgba(0, 0, 0, 0.06);
+        --Shadow: 1px 1px 16px 0px rgba(0, 0, 0, 0.06), 4px 4px 12px 0px rgba(0, 0, 0, 0.12);
+        --FontWeightBold: 600;
+        --PipeColor: #6c757d;
+        --IcnGuarantee: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%233da288' viewBox='0 0 16 16'><path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z'/></svg>");
+        --IcnPlayBtn: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='10' stroke='%23343434' stroke-width='2'/%3E%3Cpath d='m16.293 11.293-4.586-4.586c-.63-.63-1.707-.184-1.707.707v9.172c0 .89 1.077 1.337 1.707.707l4.586-4.586a1 1 0 0 0 0-1.414Z' stroke='%23343434' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+        --IcnCarousel: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.703 12.707 18.996 12l.707.707Zm0-1.414-.707.707.707-.707ZM20 13H4v-2h16v2Zm-7.797 5.793L18.996 12l1.414 1.414-6.793 6.793-1.414-1.414ZM18.996 12l-6.793-6.793 1.414-1.414 6.793 6.793L18.996 12Zm0 0 1.414-1.414a2 2 0 0 1 0 2.828L18.996 12Z' fill='%236E6E6E'/%3E%3C/svg%3E");
+        --IcnCarousel2: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23F2F2F2'/%3E%3Cpath d='M31.703 24.707 30.996 24l.707.707Zm0-1.414-.707.707.707-.707ZM32 25H16v-2h16v2Zm-7.797 5.793L30.996 24l1.414 1.414-6.793 6.793-1.414-1.414ZM30.996 24l-6.793-6.793 1.414-1.414 6.793 6.793L30.996 24Zm0 0 1.414-1.414a2 2 0 0 1 0 2.828L30.996 24Z' fill='%23343434'/%3E%3C/svg%3E");
+        --AccordionFontWeight: 600;
+        --AccordionHdrSpacer: 1rem;
+        --AccordionItemsFontSize: 1rem;
+        --AccordionToggleSize: 24px;
+        --AccordionToggleWeight: 600;
+        --BadgeAttentionBackgroundColor: #ff1c1c;
+        --BadgeAttentionBorderColor: transparent;
+        --BadgeAttentionTextColor: #fff;
+        --BadgePromoBackgroundColor: #c01818;
+        --BadgePromoBorderColor: transparent;
+        --BadgePromoTextColor: #fff;
+        --CollapseCardTitlePadding: 0 0.75rem 0.25rem;
+        --ExpiryBackgroundColor: #fde8e2;
+        --FooterTrademarksFontSize: 0.75rem;
+        --PriceRowFinalColor: #000000;
+        --PriceRowFinalFontSize: 1.5rem;
+        --PriceRowFinalFontWeight: 600;
+        --PriceRowRetailColor: #a19c9c;
+        --PriceRowRetailFontSize: 1.25rem;
+        --PriceRowRetailFontWeight: 400;
+        --PriceRowDiscountColor: #ff1c1c;
+        --PriceRowDiscountFontSize: 0.875rem;
+        --PriceRowDiscountFontWeight: 600;
+        --PriceRowDiscountDescColor: #ff1c1c;
+        --PriceRowDiscountDescFontSize: 0.875rem;
+        --PriceRowDiscountDescFontWeight: 600;
+        --PriceRowPlanDescColor: #000000;
+        --PriceRowPlanDescFontSize: 0.875rem;
+        --PriceRowPlanDescFontWeight: 400;
+        --PriceBlockFinalColor: #000000;
+        --PriceBlockFinalFontSize: 1.5rem;
+        --PriceBlockFinalFontWeight: 400;
+        --PriceBlockRetailColor: #000000;
+        --PriceBlockRetailFontSize: 0.75rem;
+        --PriceBlockRetailFontWeight: 400;
+        --PriceBlockDiscountColor: #c01818;
+        --PriceBlockDiscountFontSize: 0.875rem;
+        --PriceBlockDiscountFontWeight: 600;
+        --PriceBlockDiscountDescColor: #c01818;
+        --PriceBlockDiscountDescFontSize: 0.875rem;
+        --PriceBlockDiscountDescFontWeight: 600;
+        --PriceBlockPlanDescColor: #000000;
+        --PriceBlockPlanDescFontSize: 0.875rem;
+        --PriceBlockPlanDescFontWeight: 600;
+        --ProgressBarSuccessShapeColor: #24bc98;
+        --ProgressBarBorderRadius: 0.125rem;
+        --RadioBtnBadgeFontSize: 11px;
+        --RadioBtnPadding: 1rem;
+        --RadioBtnBackgroundColor: #f9f1ec;
+        --ToggleThickness: 2px;
+        --ToggleWidth: 10px;
+        --ToggleHeight: 10px;
+        --ToggleColor: #000000;
+        --ToggleWidthSm: 7px;
+        --ToggleHeightSm: 7px;
+        --ToggleThicknessSm: 2px;
+        --PopoverBg: #fff;
+        --PopoverFontSize: 0.75rem;
+        --PopoverIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='11' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M4.873 4.444a1.307 1.307 0 0 1 2.54.436c0 .87-1.307 1.306-1.307 1.306m.035 1.743h.004m4.352-2.178a4.356 4.356 0 1 1-8.712 0 4.356 4.356 0 0 1 8.712 0Z' stroke='%234258FF' stroke-width='.871' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' transform='translate(.914 .524)' d='M0 0h10.454v10.454H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+        --PopoverIconWidth: 0.75rem;
+        --PopoverIconHeight: 0.688rem;
+        --AccordionCollapseBackgroundColor: rgba(0, 0, 0, 0);
+        --AccordionCollapseBorderColor: rgba(0, 0, 0, 0.175);
+        --AccordionCollapseTextColor: #000000;
+        --AccordionExpandBackgroundColor: rgba(0, 0, 0, 0);
+        --AccordionExpandTextColor: #000000;
+        --AlertBannerBackgroundColor: rgba(255, 255, 255, 0.33);
+        --AlertBannerDarkBackgroundColor: #343434;
+        --AlertBannerDarkBorderColor: rgba(0, 0, 0, 0);
+        --AlertBannerDarkTextColor: #ffffff;
+        --AlertBannerBorderWidth: 0.0625rem;
+        --AlertBannerInfoBackgroundColor: #4258ff;
+        --AlertBannerInfoBorderColor: rgba(0, 0, 0, 0);
+        --AlertBannerInfoTextColor: #ffffff;
+        --AlertBannerErrorBackgroundColor: #ff1c1c;
+        --AlertBannerErrorBorderColor: rgba(0, 0, 0, 0);
+        --AlertBannerErrorTextColor: #ffffff;
+        --AlertBannerWarningBackgroundColor: #ff7900;
+        --AlertBannerWarningBorderColor: rgba(0, 0, 0, 0);
+        --AlertBannerWarningTextColor: #ffffff;
+        --AlertBannerBorder: 0;
+        --AlertBannerBorderRadius: 1rem;
+        --AlertBannerAlignitems: center;
+        --AlertBannerPromoBackgroundColor: linear-gradient(90deg, #ff3838 37.62%, #c90063 84.8%);
+        --AlertBannerPromoBorderColor: transparent;
+        --AlertBannerPromoTextColor: #ffffff;
+        --AlertBannerMargin: 1rem 1.5rem 1.5rem;
+        --AlertBannerSuccessBackgroundColor: #24bc98;
+        --AlertBannerSuccessTextColor: #fff;
+        --AlertBannerSuccessBorderColor: transparent;
+        --BackgroundColor: #fafafa;
+        --BackgroundBackgroundColor: #ffffff;
+        --BackgroundSecondaryBackgroundColor: #f9fafb;
+        --BackgroundTertiaryBackgroundColor: #f2f2f2;
+        --BackgroundQuaternaryBackgroundColor: linear-gradient(180deg, #f6f6f6 0%, #ededed 100%);
+        --BackgroundDarkTertiaryBackgroundColor: linear-gradient(354.33deg, #e9e8e7 0%, #ffffff 100%);
+        --BackgroundDarkSecondaryBackgroundColor: #343434;
+        --BackgroundAccentBackgroundColor: #f9f1ec;
+        --BackgroundAccentPromoBackgroundColor: linear-gradient(137.29deg, #ff1c1c 0%, #f07570 0.01%, #c52d42 95.31%);
+        --BadgeBackgroundColor: #000000;
+        --BadgeBorderColor: rgba(0, 0, 0, 0);
+        --BadgeTextColor: #ffffff;
+        --BadgePrimaryBackgroundColor: #ff1c1c;
+        --BadgePrimaryBorderColor: rgba(0, 0, 0, 0);
+        --BadgePrimaryTextColor: #ffffff;
+        --BadgeSuccessBackgroundColor: #3da288;
+        --BadgeSuccessBorderColor: rgba(0, 0, 0, 0);
+        --BadgeSuccessTextColor: #ffffff;
+        --BadgeInfoBackgroundColor: #4258ff;
+        --BadgeInfoBorderColor: rgba(0, 0, 0, 0);
+        --BadgeInfoTextColor: #ffffff;
+        --BadgeLightBackgroundColor: #ffffff;
+        --BadgeLightBorderColor: rgba(0, 0, 0, 0);
+        --BadgeLightTextColor: #ff1c1c;
+        --BadgeWarningBackgroundColor: #ffe3c2;
+        --BadgeWarningBorderColor: rgba(0, 0, 0, 0);
+        --BadgeWarningTextColor: #343434;
+        --BrandMcafeeColor: #ff1c1c;
+        --BrandMcafeeDarkColor: #000000;
+        --BrandMcafeeLightColor: #ffffff;
+        --ButtonBackgroundColor: #ff1c1c;
+        --ButtonTextColor: #ffffff;
+        --ButtonHoverBackgroundColor: #c01818;
+        --ButtonHoverBorderColor: #c01818;
+        --ButtonHoverTextColor: #ffffff;
+        --ButtonPressedBackgroundColor: #c01818;
+        --ButtonPressedBorderColor: rgba(0, 0, 0, 0);
+        --ButtonPressedTextColor: #ffffff;
+        --ButtonSuccessBackgroundColor: #24bc98;
+        --ButtonSuccessTextColor: #ffffff;
+        --ButtonSuccessHoverBackgroundColor: #29d6ac;
+        --ButtonSuccessHoverBorderColor: #29d6ac;
+        --ButtonSuccessHoverTextColor: #ffffff;
+        --ButtonSuccessPressedBackgroundColor: #3da288;
+        --ButtonSuccessPressedBorderColor: #3da288;
+        --ButtonSuccessPressedTextColor: #ffffff;
+        --ButtonDarkBackgroundColor: #454545;
+        --ButtonDarkTextColor: #ffffff;
+        --ButtonDarkHoverBackgroundColor: #6e6e6e07;
+        --ButtonDarkHoverBorderColor: #6e6e6e;
+        --ButtonDarkHoverTextColor: #ffffff;
+        --ButtonDarkPressedBackgroundColor: #343434;
+        --ButtonDarkPressedBorderColor: #343434;
+        --ButtonDarkPressedTextColor: #ffffff;
+        --ButtonLightBackgroundColor: #ffffff;
+        --ButtonLightTextColor: #000000;
+        --ButtonLightHoverBackgroundColor: #ffffff;
+        --ButtonLightHoverBorderColor: #ffffff;
+        --ButtonLightHoverTextColor: #000000;
+        --ButtonLightPressedBackgroundColor: #ffffff;
+        --ButtonLightPressedTextColor: #000000;
+        --ButtonDisabledBackgroundColor: #e8e8e8;
+        --ButtonDisabledBorderColor: #e8e8e8;
+        --ButtonDisabledTextColor: #a19c9c;
+        --ButtonSecondaryBackgroundColor: transparent;
+        --ButtonSecondaryTextColor: #454545;
+        --ButtonSecondaryHoverBackgroundColor: #e80000;
+        --ButtonSecondaryHoverBorderColor: #e80000;
+        --ButtonSecondaryHoverTextColor: #ffffff;
+        --ButtonSecondaryPressedBackgroundColor: #e8e8e8;
+        --ButtonSecondaryPressedBorderColor: #6e6e6e;
+        --ButtonSecondaryPressedTextColor: #454545;
+        --ButtonSecondaryDisabledBackgroundColor: rgba(0, 0, 0, 0);
+        --ButtonSecondaryDisabledBorderColor: #dbdbdb;
+        --ButtonSecondaryDisabledTextColor: #a19c9c;
+        --ButtonTertiaryTextColor: #ff1c1c;
+        --ButtonTertiaryHoverTextColor: #ff615c;
+        --ButtonTertiaryDisabledTextColor: #b2b2b2;
+        --CardBackgroundColor: #ffffff;
+        --CardPromoBackgroundColor: #f9f1ec;
+        --CardPromoBorderColor: #efddd7;
+        --CardBorderColor: rgba(0, 0, 0, 0.175);
+        --CarouselIndicatorShapeColor: #b2b2b2;
+        --CarouselIndicatorHoverShapeColor: #cccccc;
+        --CarouselIndicatorPressedShapeColor: #000000;
+        --CarouselIndicatorSelectedBackgroundColor: rgba(0, 0, 0, 0);
+        --CarouselIconArrowColor: #6e6e6e;
+        --CloseButtonBackgroundColor: #f2f2f2;
+        --CloseButtonIconColor: #454545;
+        --CloseButtonHoverBackgroundColor: #e8e8e8;
+        --DividerMidBorderColor: #a19c9c;
+        --DropdownBackgroundColor: #ffffff;
+        --DropdownBorderColor: rgba(149, 149, 149, 1);
+        --DropdownTextColor: #454545;
+        --DropdownFocusBorderColor: #4258ff;
+        --InputSelectedBorderColor: #4258ff;
+        --LinkTextColor: #000000;
+        --LinkHoverTextColor: #ea1010;
+        --LinkSecondaryTextColor: #af0707;
+        --LinkSecondaryHoverTextColor: #ff1c1c;
+        --ModalMdBackgroundColor: #ffffff;
+        --ModalMdBorderColor: #ffffff;
+        --NavBarItemSelectedTextColor: #c01818;
+        --OverflowMenuItemDividerColor: #f2f2f2;
+        --OverflowMenuItemTextColor: #454545;
+        --OverflowMenuItemHoverBackgroundColor: #f2f2f2;
+        --OverflowMenuItemHoverTextColor: #454545;
+        --OverflowMenuItemSelectedBackgroundColor: #ff1c1c;
+        --OverflowMenuItemSelectedTextColor: #f4f5fe;
+        --OverflowMenuItemDisabledBackgroundColor: #f2f2f2;
+        --RadioBackgroundColor: #ffffff;
+        --RadioBorderColor: #b1babf;
+        --RadioHoverBackgroundColor: #efefef;
+        --RadioSelectedBackgroundColor: #ffffff;
+        --RadioSelectedBorderColor: #ff1c1c;
+        --SwitchBorderRadius: 1.5rem;
+        --TabsBorderColor: rgba(0, 0, 0, 0);
+        --TabsSelectedBackgroundColor: #ffffff;
+        --TabsSelectedBorderColor: rgba(0, 0, 0, 0);
+        --TabsSelectedHighlightColor: #ff1c1c;
+        --TabsHoverBorderColor: rgba(0, 0, 0, 0);
+        --TabsBorderWidth: 0.0625rem;
+        --TypographyHeaderXxxlColor: #000;
+        --TypographyHeaderXxlColor: #000;
+        --TypographyHeaderXlColor: #000;
+        --TypographyHeaderLgColor: #000;
+        --TypographyHeaderMdColor: #000;
+        --TypographyHeaderSmColor: #000;
+        --TypographyHeaderXsColor: #000;
+        --TypographyHeaderXxsColor: #000;
+        --TypographyHeaderXxxsColor: #000;
+        --TypographyBodyXlColor: #000;
+        --AccordionCollapseBorderWidth: 0.0625rem;
+        --BadgeBorderRadius: 0.375rem;
+        --ButtonBorderWidth: 0.0625rem;
+        --ButtonBorderRadius: 2rem;
+        --CardXlBorderRadius: 1.25rem;
+        --CardMdBorderRadius: 0.75rem;
+        --CardBorderWidth: 0.0625rem;
+        --CloseButtonBorderRadius: 3rem;
+        --DropdownBorderWidth: 0.0625rem;
+        --DropdownBorderRadius: 0.5rem;
+        --ModalLgBorderRadius: 1.5rem;
+        --ModalMdBorderWidth: 0.0625rem;
+        --ModalMdBorderRadius: 1rem;
+        --ModalSmBorderRadius: 0.75rem;
+        --PencilBannerBgColor: #ffffff;
+        --PencilBannerTextColor: #343434;
+        --PencilBannerBorder: 1px solid #b2b2b2;
+        --PencilBannerBorderRadius: 0.75rem;
+        --PencilBannerSecondaryBgColor: linear-gradient(90deg, #ff3838 37.62%, #c90063 84.8%);
+        --PencilBannerSecondaryTextColor: #ffffff;
+        --PencilBannerSecondaryLinkColor: #ffffff;
+        --PencilBannerSecondaryBorderRadius: 0.75rem;
+        --RadioBorderWidth: 0.125rem;
+        --RadioBorderRadius: 3rem;
+        --RadioWidth: 1.25em;
+        --RadioHeight: 1.25em;
+        --RadioSelectedWidth: 0.1875em;
+        --TypographyHeaderXxxlFontSize: 6rem;
+        --TypographyHeaderXxlFontSize: 3.75rem;
+        --TypographyHeaderXlFontSize: 3rem;
+        --TypographyHeaderLgFontSize: 2.5rem;
+        --TypographyHeaderMdFontSize: 2rem;
+        --TypographyHeaderSmFontSize: 1.75rem;
+        --TypographyHeaderXsFontSize: 1.5rem;
+        --TypographyHeaderXxsFontSize: 1.25rem;
+        --TypographyHeaderXxxsFontSize: 1.125rem;
+        --TypographyBodyXlFontSize: 1.25rem;
+        --TypographyBodyLgFontSize: 1.125rem;
+        --TypographyBodyMdFontSize: 1rem;
+        --TypographyBodySmFontSize: 0.875rem;
+        --AccordionCollapseBorderRadius: 0px;
+        --BadgeBorderRadius: 4.75px;
+        --ButtonBorder: none;
+        --ButtonBorderRadius: 32px;
+        --ButtonSuccessBorder: 0px solid rgba(36, 188, 152, 1);
+        --ButtonDarkBorder: 0px solid rgba(255, 28, 28, 1);
+        --ButtonLightBorder: 1px solid rgba(255, 255, 255, 1);
+        --ButtonLightPressedBorder: 1px solid rgba(255, 255, 255, 1);
+        --ButtonSecondaryBorder: 1px solid #a19c9c;
+        --CloseButtonBorder: 1px solid rgba(232, 232, 232, 1);
+        --CloseButtonBorderRadius: 48px;
+        --DividerHeavyBorder: none;
+        --DropdownBorderRadius: 8px;
+        --RadioBorder: 1px solid #ff1c1c;
+        --RadioFocusBorder: 2px solid rgba(66, 88, 255, 1);
+        --SwitchBorderRadius: 24px;
+        --TypographyHeaderXxxlStrongFontWeight: 600;
+        --TypographyHeaderXxlStrongFontWeight: 600;
+        --TypographyHeaderXlStrongFontWeight: 600;
+        --TypographyHeaderLgStrongFontWeight: 600;
+        --TypographyHeaderMdStrongFontWeight: 600;
+        --TypographyHeaderSmStrongFontWeight: 600;
+        --TypographyHeaderXsStrongFontWeight: 600;
+        --TypographyHeaderXxsFontWeight: 400;
+        --TypographyHeaderXxxsFontWeight: 400;
+      }
+      /* pencil banner */
+      .alert-without-close.var1 .alert-badge {
+        --bs-badge-padding-x: 0.5rem;
+        --bs-badge-padding-y: 0.25rem;
+        --bs-badge-font-size: 0.875rem;
+        --bs-badge-font-weight: 600;
+        --bs-badge-color: var(--BadgeTextColor);
+        --bs-badge-border-radius: var(--BadgeBorderRadius);
+        display: inline-block;
+        padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+        font-size: var(--bs-badge-font-size);
+        font-weight: var(--bs-badge-font-weight);
+        line-height: 1;
+        color: var(--bs-badge-color);
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: var(--bs-badge-border-radius);
+      }
+      .alert-without-close.var1 .alert-badge:empty {
+        display: none;
+      }
+      .alert {
+        --bs-alert-bg: transparent;
+        --bs-alert-padding-x: 1rem;
+        --bs-alert-padding-y: 0.75rem;
+        --bs-alert-margin-bottom: 1rem;
+        --bs-alert-color: inherit;
+        --bs-alert-border-color: transparent;
+        --bs-alert-border: var(--AlertBannerBorderWidth) solid var(--bs-alert-border-color);
+        --bs-alert-border-radius: var(--AlertBannerBorderRadius);
+        --bs-alert-link-color: inherit;
+        position: relative;
+        padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x);
+        margin-bottom: var(--bs-alert-margin-bottom);
+        color: var(--bs-alert-color);
+        background-color: var(--bs-alert-bg);
+        border: var(--bs-alert-border);
+        border-radius: var(--bs-alert-border-radius);
+      }
+      .alert-dismissible {
+        padding-right: 3rem;
+      }
+      .alert {
+        display: flex;
+        align-items: center;
+        justify-content: var(--AlertBannerAlignitems);
+      }
+      .alert-badge {
+        margin-right: var(--SpacerSm);
+      }
+      :focus {
+        outline: 0;
+      }
+      :focus-visible {
+        outline: 2px solid var(--Outline) !important;
+        outline-offset: 2px;
+      }
+      b {
+        font-weight: 600;
+      }
+      .alert-without-close.var1 .alert {
+        --bs-alert-color: var(--AlertBannerPromoTextColor);
+        --bs-alert-border-color: var(--AlertBannerPromoBorderColor);
+        background: var(--AlertBannerPromoBackgroundColor);
+        border-width: var(--AlertBannerBorder);
+      }
+      .alert {
+        --bs-alert-bg: var(--AlertBannerBackgroundColor);
+        box-shadow: var(--ShadowSm);
+      }
+      .alert-without-close.var1 .alert-badge {
+        background: var(--BadgeLightBackgroundColor);
+        border: 1px solid var(--BadgeLightBorderColor);
+        color: var(--BadgeLightTextColor);
+      }
+      .alert-without-close .alert {
+        margin: var(--AlertBannerMargin);
+      }
+      .alert-without-close.var1 .alert {
+        --bs-alert-padding-y: 0.825rem;
+        --AlertBannerPromoBackgroundColor: linear-gradient(270.01deg, #b10062 16.34%, #f51627 86.33%);
+      }
+      .alert-without-close.var1 .alert.alert-dismissible {
+        padding-right: 1rem;
+        text-align: center;
+      }
+      @media (max-width: 767.98px) {
+        .alert-without-close.var1 .alert-message {
+          font-size: 0.875rem;
+        }
+      }
+      /* alert */
+      img {
+        vertical-align: middle;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .header-with-supscription,
+      .section-content {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 576px) {
+        .header-with-supscription,
+        .section-content {
+          max-width: 540px;
+        }
+      }
+      @media (min-width: 768px) {
+        .header-with-supscription,
+        .section-content {
+          max-width: 720px;
+        }
+      }
+      @media (min-width: 992px) {
+        .header-with-supscription,
+        .section-content {
+          max-width: 960px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .header-with-supscription,
+        .section-content {
+          max-width: 1140px;
+        }
+      }
+      .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-0.5 * var(--bs-gutter-x));
+        margin-left: calc(-0.5 * var(--bs-gutter-x));
+      }
+      .row > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-top: var(--bs-gutter-y);
+      }
+      @media (min-width: 768px) {
+        .flexcolumn-col {
+          flex: 1 0 0%;
+        }
+      }
+      :focus {
+        outline: 0;
+      }
+      :focus-visible {
+        outline: 2px solid var(--Outline) !important;
+        outline-offset: 2px;
+      }
+      b {
+        font-weight: 600;
+      }
+      .flexcolumn-row {
+        gap: var(--Gap);
+      }
+      .flexcolumn-col {
+        overflow: hidden;
+      }
+      .flexcolumn-col:has(:focus-visible) {
+        overflow: unset;
+      }
+      @media (max-width: 575.98px) {
+        .section {
+          margin-inline: var(--GutterSm);
+        }
+      }
+      .fc-hilite {
+        color: var(--TextHighlight);
+      }
+      .section-content {
+        padding-block: var(--SectionSpacer);
+      }
+      .section-color.primary {
+        background: var(--BackgroundBackgroundColor);
+      }
+      .header-with-supscription.pre-var1 .section-content {
+        padding-block: 0;
+        --bs-gutter-x: 0;
+      }
+      .header-with-supscription.pre-var1 .header-wrapper {
+        display: flex;
+        align-items: center;
+      }
+      .header-with-supscription.pre-var1 .subscription-wrapper {
+        display: flex;
+      }
+      @media (min-width: 992px) {
+        .header-with-supscription.pre-var1 .subscription-wrapper {
+          justify-content: start;
+        }
+      }
+      .header-with-supscription.pre-var1 .subscription-alert {
+        display: flex;
+        align-items: center;
+        padding: var(--SpacerXs) var(--Spacer);
+        border-radius: var(--bs-border-radius-pill);
+        background: var(--ExpiryBackgroundColor);
+        height: 3rem;
+      }
+      .header-with-supscription.pre-var1 .subscription-alert .rte_image {
+        margin-left: var(--SpacerXs);
+      }
+      .header-with-supscription.pre-var1 .subscription-msg .rte_ddr span {
+        color: #f4663e;
+      }
+      @media (min-width: 992px) {
+        .header-with-supscription.pre-var1 .flexcolumn-col:first-child {
+          display: flex;
+          align-items: center;
+        }
+      }
+      @media (max-width: 991.98px) {
+        .header-with-supscription.pre-var1 .flexcolumn-row {
+          flex-direction: column;
+        }
+        .header-with-supscription.pre-var1 .subscription-alert {
+          width: 100%;
+          justify-content: center;
+        }
+        .header-with-supscription.pre-var1 .header-wrapper {
+          justify-content: space-between;
+        }
+      }
+      .header-with-supscription.pre-var1 .fc-hilite {
+        color: #f4663e;
+      }
+      /* hero */
+      .features-with-dynamic-radio-and-dropdown .hero-title,
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--bs-heading-color);
+      }
+      h1 {
+        font-size: var(--TypographyHeaderXxxlFontSize);
+      }
+      .features-with-dynamic-radio-and-dropdown .hero-title {
+        font-size: var(--TypographyHeaderLgFontSize);
+      }
+      b {
+        font-weight: bolder;
+      }
+      a {
+        color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+        text-decoration: underline;
+      }
+      a:hover {
+        --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+        text-decoration: none;
+      }
+      img,
+      svg {
+        vertical-align: middle;
+      }
+      label {
+        display: inline-block;
+      }
+      input {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+      }
+      fieldset {
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+      }
+      legend {
+        float: left;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 0.5rem;
+        font-size: calc(1.05rem + 0.6vw);
+        line-height: inherit;
+      }
+      legend + * {
+        clear: left;
+      }
+      @media (min-width: 1200px) {
+        legend {
+          font-size: 1.5rem;
+        }
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .features-with-dynamic-radio-and-dropdown .section,
+      .section-content {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 576px) {
+        .features-with-dynamic-radio-and-dropdown .section,
+        .section-content {
+          max-width: 540px;
+        }
+      }
+      @media (min-width: 768px) {
+        .features-with-dynamic-radio-and-dropdown .section,
+        .section-content {
+          max-width: 720px;
+        }
+      }
+      @media (min-width: 992px) {
+        .features-with-dynamic-radio-and-dropdown .section,
+        .section-content {
+          max-width: 960px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .features-with-dynamic-radio-and-dropdown .section,
+        .section-content {
+          max-width: 1140px;
+        }
+      }
+      .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-0.5 * var(--bs-gutter-x));
+        margin-left: calc(-0.5 * var(--bs-gutter-x));
+      }
+      .row > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-top: var(--bs-gutter-y);
+      }
+      .cmp-radiobutton .radio-col1 {
+        flex: 0 0 auto;
+        width: 8.33333333%;
+      }
+      .features-with-dynamic-radio-and-dropdown .section-content > .cmp-flex-column > div > .row > .flexcolumn-col:first-child,
+      .features-with-dynamic-radio-and-dropdown .section-content > .cmp-flex-column > div > .row > .flexcolumn-col:nth-child(2) {
+        flex: 0 0 auto;
+        width: 50%;
+      }
+      .cmp-radiobutton .radio-col2 {
+        flex: 0 0 auto;
+        width: 91.66666667%;
+      }
+      @media (min-width: 768px) {
+        .flexcolumn-col {
+          flex: 1 0 0%;
+        }
+      }
+      .btn {
+        --bs-btn-padding-x: 1.5rem;
+        --bs-btn-padding-y: 0.625rem;
+        --bs-btn-font-size: var(--TypographyBodyMdFontSize);
+        --bs-btn-font-weight: 400;
+        --bs-btn-line-height: 1.5;
+        --bs-btn-color: var(--bs-body-color);
+        --bs-btn-bg: transparent;
+        --bs-btn-border-width: var(--ButtonBorderWidth);
+        --bs-btn-border-color: transparent;
+        --bs-btn-border-radius: var(--ButtonBorderRadius);
+        --bs-btn-hover-border-color: transparent;
+        --bs-btn-disabled-opacity: 0.65;
+        --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), 0.5);
+        display: inline-block;
+        padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+        font-family: var(--bs-btn-font-family);
+        font-size: var(--bs-btn-font-size);
+        font-weight: var(--bs-btn-font-weight);
+        line-height: var(--bs-btn-line-height);
+        color: var(--bs-btn-color);
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+        border-radius: var(--bs-btn-border-radius);
+        background-color: var(--bs-btn-bg);
+      }
+      .btn:hover {
+        color: var(--bs-btn-hover-color);
+        background-color: var(--bs-btn-hover-bg);
+        border-color: var(--bs-btn-hover-border-color);
+      }
+      .btn:first-child:active,
+      :not(.btn-check) + .btn:active {
+        color: var(--bs-btn-active-color);
+        background-color: var(--bs-btn-active-bg);
+        border-color: var(--bs-btn-active-border-color);
+      }
+      .btn:disabled {
+        color: var(--bs-btn-disabled-color);
+        background-color: var(--bs-btn-disabled-bg);
+        border-color: var(--bs-btn-disabled-border-color);
+        opacity: var(--bs-btn-disabled-opacity);
+      }
+      .collapse:not(.show) {
+        display: none;
+      }
+      .features-with-dynamic-radio-and-dropdown.var1 .radio-badge {
+        --bs-badge-padding-x: 0.5rem;
+        --bs-badge-padding-y: 0.25rem;
+        --bs-badge-font-size: 0.875rem;
+        --bs-badge-font-weight: 600;
+        --bs-badge-color: var(--BadgeTextColor);
+        --bs-badge-border-radius: var(--BadgeBorderRadius);
+        display: inline-block;
+        padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+        font-size: var(--bs-badge-font-size);
+        font-weight: var(--bs-badge-font-weight);
+        line-height: 1;
+        color: var(--bs-badge-color);
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: var(--bs-badge-border-radius);
+      }
+      .features-with-dynamic-radio-and-dropdown.var1 .radio-badge:empty {
+        display: none;
+      }
+      .d-flex {
+        display: flex !important;
+      }
+      .d-none {
+        display: none !important;
+      }
+      .flex-column-reverse {
+        flex-direction: column-reverse !important;
+      }
+      .me-1 {
+        margin-right: 0.25rem !important;
+      }
+      :focus {
+        outline: 0;
+      }
+      :focus-visible {
+        outline: 2px solid var(--Outline) !important;
+        outline-offset: 2px;
+      }
+      .cmp-addtocart .btn {
+        min-width: 10.875rem;
+      }
+      .cmp-collapse .collapse-btn {
+        --bs-btn-padding-x: 0;
+      }
+      .cmp-collapse .collapse-btn:active {
+        --bs-btn-active-border-color: transparent;
+      }
+      .cmp-collapse .collapse-btn:after {
+        vertical-align: 2px;
+      }
+      .cmp-collapse .collapse-container {
+        flex-direction: column-reverse !important;
+      }
+      .collapse-icon {
+        margin-right: var(--SpacerXs);
+      }
+      a {
+        color: var(--LinkTextColor);
+      }
+      a:hover {
+        color: var(--LinkHoverTextColor);
+      }
+      b {
+        font-weight: 600;
+      }
+      .flexcolumn-row {
+        gap: var(--Gap);
+      }
+      .flexcolumn-col {
+        overflow: hidden;
+      }
+      .flexcolumn-col:has(:focus-visible) {
+        overflow: unset;
+      }
+      .pay-icon {
+        width: 39px;
+        height: 25px;
+        border: 0.2px solid #abb2c3;
+        border-radius: 2px;
+        display: inline-block;
+        background: url(https://www.mcafee.com/etc.clientlibs/ecom-aemcs-frontend/npcld/themes/assets/resources/img/payment-sprite-icons.svg) no-repeat;
+      }
+      .visa {
+        background-position: 0 0;
+      }
+      .mastercard {
+        background-position: -268px 0;
+      }
+      .americanexpress {
+        background-position: -191px 0;
+      }
+      .discover {
+        background-position: -229px 0;
+      }
+      .paypal {
+        background-position: -153px 0;
+      }
+      .price-row {
+        display: flex;
+        align-items: center;
+      }
+      .price-row .final-price {
+        color: var(--PriceRowFinalColor);
+        font-size: var(--PriceRowFinalFontSize);
+        font-weight: var(--PriceRowFinalFontWeight);
+      }
+      .price-row .retail-price {
+        color: var(--PriceRowRetailColor);
+        font-size: var(--PriceRowRetailFontSize);
+        font-weight: var(--PriceRowRetailFontWeight);
+        text-decoration: line-through;
+      }
+      .price-row .discount-price {
+        color: var(--PriceRowDiscountColor);
+        font-size: var(--PriceRowDiscountFontSize);
+        font-weight: var(--PriceRowDiscountFontWeight);
+      }
+      .price-row .discount-description {
+        color: var(--PriceRowDiscountDescColor);
+        font-size: var(--PriceRowDiscountDescFontSize);
+        font-weight: var(--PriceRowDiscountDescFontWeight);
+      }
+      .price-row .plan-description {
+        color: var(--PriceRowPlanDescColor);
+        font-size: var(--PriceRowPlanDescFontSize);
+        font-weight: var(--PriceRowPlanDescFontWeight);
+      }
+      .cmp-radiobutton .radio-badge:empty {
+        display: none;
+      }
+      .cmp-radiobutton .radio-button {
+        display: flex;
+        align-items: center;
+        padding: var(--RadioBtnPadding);
+        border-bottom: 1px dotted var(--RadioBorderColor);
+      }
+      .cmp-radiobutton .radio-button:has(input:checked) {
+        background: var(--RadioBtnBackgroundColor);
+      }
+      .cmp-radiobutton .radio-col1 {
+        margin-right: calc(var(--Spacer) * 0.25);
+      }
+      .cmp-radiobutton .radio-input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: var(--RadioBorderWidth) solid var(--RadioSelectedBorderColor);
+        border-radius: var(--RadioBorderRadius);
+        height: var(--RadioWidth);
+        width: var(--RadioHeight);
+        display: block;
+      }
+      .cmp-radiobutton .radio-input[type="radio"]:checked {
+        background-color: var(--RadioSelectedBorderColor);
+        box-shadow: inset 0 0 0 var(--RadioSelectedWidth) var(--RadioBackgroundColor);
+      }
+      .cmp-radiobutton .radio-input[type="radio"]:hover {
+        box-shadow: inset 0 0 0 var(--RadioSelectedWidth) var(--RadioHoverBackgroundColor);
+      }
+      @media (max-width: 575.98px) {
+        .section {
+          margin-inline: var(--GutterSm);
+        }
+      }
+      h1 {
+        font-weight: var(--TypographyHeaderXxxlStrongFontWeight);
+        color: var(--TypographyHeaderXxxlColor);
+        font-size: calc(1.5rem + 6vw);
+        line-height: calc(1.6rem + 7.2vw);
+      }
+      @media (min-width: 1200px) {
+        h1 {
+          font-size: 6rem;
+        }
+        h1 {
+          line-height: 7rem;
+        }
+      }
+      .features-with-dynamic-radio-and-dropdown .hero-title {
+        font-weight: var(--TypographyHeaderLgStrongFontWeight);
+        color: var(--TypographyHeaderLgColor);
+        font-size: calc(1.15rem + 1.8vw);
+        line-height: calc(1.2rem + 2.4vw);
+      }
+      @media (min-width: 1200px) {
+        .features-with-dynamic-radio-and-dropdown .hero-title {
+          font-size: 2.5rem;
+        }
+        .features-with-dynamic-radio-and-dropdown .hero-title {
+          line-height: 3rem;
+        }
+      }
+      .features-with-dynamic-radio-and-dropdown .radio-title {
+        font-size: calc(1.025rem + 0.3vw);
+        line-height: calc(1.075rem + 0.9vw);
+        color: var(--TypographyBodyXlColor);
+      }
+      @media (min-width: 1200px) {
+        .features-with-dynamic-radio-and-dropdown .radio-title {
+          font-size: 1.25rem;
+        }
+        .features-with-dynamic-radio-and-dropdown .radio-title {
+          line-height: 1.75rem;
+        }
+      }
+      .features-with-dynamic-radio-and-dropdown .section-description {
+        font-size: calc(1.0125rem + 0.15vw);
+        line-height: calc(1.075rem + 0.9vw);
+      }
+      @media (min-width: 1200px) {
+        .features-with-dynamic-radio-and-dropdown .section-description {
+          font-size: 1.125rem;
+        }
+        .features-with-dynamic-radio-and-dropdown .section-description {
+          line-height: 1.75rem;
+        }
+      }
+      .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn,
+      .features-with-dynamic-radio-and-dropdown .cmp-collapse .expand-description,
+      .features-with-dynamic-radio-and-dropdown .discount-description,
+      .features-with-dynamic-radio-and-dropdown .features-post-content,
+      .features-with-dynamic-radio-and-dropdown .offer-terms,
+      .features-with-dynamic-radio-and-dropdown .os-supported,
+      .features-with-dynamic-radio-and-dropdown .plan-description,
+      .features-with-dynamic-radio-and-dropdown .section-title {
+        font-size: 0.875rem;
+        line-height: calc(1.025rem + 0.3vw);
+      }
+      @media (min-width: 1200px) {
+        .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn,
+        .features-with-dynamic-radio-and-dropdown .cmp-collapse .expand-description,
+        .features-with-dynamic-radio-and-dropdown .discount-description,
+        .features-with-dynamic-radio-and-dropdown .features-post-content,
+        .features-with-dynamic-radio-and-dropdown .offer-terms,
+        .features-with-dynamic-radio-and-dropdown .os-supported,
+        .features-with-dynamic-radio-and-dropdown .plan-description,
+        .features-with-dynamic-radio-and-dropdown .section-title {
+          line-height: 1.25rem;
+        }
+      }
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-title,
+      .features-with-dynamic-radio-and-dropdown .payment-description {
+        font-size: 0.75rem;
+        line-height: calc(1.025rem + 0.3vw);
+      }
+      .fc-attention {
+        color: var(--TextAttention);
+      }
+      .section-content {
+        padding-block: var(--SectionSpacer);
+      }
+      .section-color.primary {
+        background: var(--BackgroundBackgroundColor);
+      }
+      .features-with-dynamic-radio-and-dropdown.var1 .radio-badge {
+        background: var(--BadgeSuccessBackgroundColor);
+        border: 1px solid var(--BadgeSuccessBorderColor);
+        color: var(--BadgeSuccessTextColor);
+      }
+      .cmp-addtocart .btn,
+      .features-with-dynamic-radio-and-dropdown .button-label {
+        background: var(--ButtonBackgroundColor);
+        border: var(--ButtonBorder);
+        color: var(--ButtonTextColor);
+      }
+      .cmp-addtocart .btn:hover,
+      .features-with-dynamic-radio-and-dropdown .button-label:hover {
+        background-color: var(--ButtonHoverBackgroundColor);
+        border-color: var(--ButtonHoverBorderColor);
+        color: var(--ButtonHoverTextColor);
+      }
+      .cmp-addtocart .btn:active,
+      .cmp-addtocart .btn:focus,
+      .features-with-dynamic-radio-and-dropdown .btn.button-label:active,
+      .features-with-dynamic-radio-and-dropdown .btn.button-label:focus {
+        background-color: var(--ButtonPressedBackgroundColor);
+        border-color: var(--ButtonPressedBorderColor);
+        color: var(--ButtonPressedTextColor);
+      }
+      .cmp-addtocart .btn:disabled,
+      .features-with-dynamic-radio-and-dropdown .button-label:disabled {
+        background-color: var(--ButtonDisabledBackgroundColor);
+        border-color: var(--ButtonDisabledBorderColor);
+        color: var(--ButtonDisabledTextColor);
+      }
+      .cmp-collapse .collapse-btn:after,
+      .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn::after,
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-btn::after,
+      .features-with-dynamic-radio-and-dropdown .features-post-content:after {
+        content: "";
+        display: inline-block;
+        transform: rotate(45deg);
+        margin-left: var(--SpacerXs);
+        color: var(--ToggleColor);
+      }
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-btn::after {
+        border-bottom: var(--ToggleThickness) solid;
+        border-right: var(--ToggleThickness) solid;
+        width: var(--ToggleWidth);
+        height: var(--ToggleHeight);
+      }
+      .cmp-collapse .collapse-btn:after,
+      .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn::after,
+      .features-with-dynamic-radio-and-dropdown .features-post-content:after {
+        border-bottom: var(--ToggleThicknessSm) solid;
+        border-right: var(--ToggleThicknessSm) solid;
+        width: var(--ToggleWidthSm);
+        height: var(--ToggleHeightSm);
+      }
+      .features-with-dynamic-radio-and-dropdown .section-content > .cmp-flex-column > div > .row {
+        justify-content: space-between;
+      }
+      .features-with-dynamic-radio-and-dropdown .section-content > .cmp-flex-column > div > .row > .flexcolumn-col:first-child,
+      .features-with-dynamic-radio-and-dropdown .section-content > .cmp-flex-column > div > .row > .flexcolumn-col:nth-child(2) {
+        width: 49%;
+      }
+      .features-with-dynamic-radio-and-dropdown .collapse-card a {
+        text-decoration: none;
+        color: initial;
+      }
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-hdr {
+        font-weight: var(--FontWeightBold);
+        padding-block: var(--SpacerXs);
+      }
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-title {
+        background: var(--BackgroundAccentBackgroundColor);
+        margin: var(--SpacerXs) var(--SpacerXs) var(--SpacerXs) 0;
+        padding: var(--CollapseCardTitlePadding);
+        border-radius: var(--RadiusXxs);
+        display: inline-grid;
+        vertical-align: top;
+      }
+      @media (min-width: 992px) {
+        .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-title {
+          width: 48%;
+        }
+      }
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-title.collapse-disabled {
+        filter: grayscale(1);
+      }
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-title.collapse-disabled .collapse-body,
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-title.collapse-disabled .collapse-btn {
+        filter: invert(0.5);
+      }
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: var(--SpacerSm) var(--SpacerXs);
+      }
+      .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-btn-content {
+        display: flex;
+        align-items: center;
+        text-align: start;
+        font-weight: var(--FontWeightBold);
+      }
+      .features-with-dynamic-radio-and-dropdown .price-row {
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .features-with-dynamic-radio-and-dropdown .section-title {
+        font-weight: var(--FontWeightBold);
+      }
+      .features-with-dynamic-radio-and-dropdown .section-description {
+        font-weight: var(--FontWeightBold);
+        white-space: nowrap;
+      }
+      .features-with-dynamic-radio-and-dropdown .radioitem-left,
+      .features-with-dynamic-radio-and-dropdown .radioitem-right {
+        display: inline-flex;
+        align-items: center;
+      }
+      .features-with-dynamic-radio-and-dropdown .radio-title {
+        font-weight: var(--FontWeightBold);
+      }
+      .features-with-dynamic-radio-and-dropdown .final-price {
+        padding-left: var(--SpacerSm);
+      }
+      @media (max-width: 575.98px) {
+        .features-with-dynamic-radio-and-dropdown .radioitem-left {
+          flex-wrap: wrap;
+        }
+        .features-with-dynamic-radio-and-dropdown .radio-title {
+          font-size: 1rem;
+        }
+        .features-with-dynamic-radio-and-dropdown .final-price {
+          --PriceRowFinalFontSize: 1.25rem;
+        }
+        .features-with-dynamic-radio-and-dropdown .retail-price {
+          --PriceRowRetailFontSize: 1rem;
+        }
+      }
+      .features-with-dynamic-radio-and-dropdown .payment-description {
+        text-align: end;
+        margin-left: var(--SpacerXs);
+      }
+      .features-with-dynamic-radio-and-dropdown .discount-description {
+        color: var(--BrandMcafeeColor);
+        font-weight: var(--FontWeightBold);
+      }
+      .features-with-dynamic-radio-and-dropdown .plan-description {
+        padding-right: 0.5rem;
+        white-space: nowrap;
+      }
+      .features-with-dynamic-radio-and-dropdown .hero-title {
+        font-weight: 400;
+        color: var(--HeroTitleColor);
+      }
+      .features-with-dynamic-radio-and-dropdown .hero-description {
+        margin-block: var(--ContentSpacer);
+      }
+      .features-with-dynamic-radio-and-dropdown .feature-title {
+        font-size: var(--TypographyHeaderXxxsFontSize);
+        margin-bottom: var(--Spacer);
+      }
+      .features-with-dynamic-radio-and-dropdown .features-post-content {
+        margin-top: 1rem;
+        font-weight: var(--FontWeightBold);
+      }
+      .features-with-dynamic-radio-and-dropdown .features-post-content:after {
+        --ToggleColor: var(--BrandMcafeeColor);
+        vertical-align: 3px;
+      }
+      .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn {
+        padding: 0;
+        display: inline-block;
+        text-align: left;
+        font-weight: var(--FontWeightBold);
+        margin: 0;
+        border: 0;
+        display: flex;
+      }
+      .features-with-dynamic-radio-and-dropdown .cmp-collapse .collapse-btn::after {
+        --ToggleColor: var(--BrandMcafeeColor);
+        position: relative;
+        top: 5px;
+      }
+      .features-with-dynamic-radio-and-dropdown .cmp-collapse .expand-description {
+        padding-top: var(--Spacer);
+        margin-left: var(--SpacerXl);
+      }
+      @media (min-width: 1200px) {
+        .features-with-dynamic-radio-and-dropdown .collapse-card .collapse-title,
+        .features-with-dynamic-radio-and-dropdown .payment-description {
+          line-height: 1.25rem;
+        }
+        .features-with-dynamic-radio-and-dropdown .feature-title,
+        .features-with-dynamic-radio-and-dropdown .price-row {
+          white-space: nowrap;
+        }
+      }
+      @media (max-width: 767.98px) {
+        .features-with-dynamic-radio-and-dropdown .row:has(.cmp-collapse) .collapse-btn {
+          position: relative;
+          width: 100%;
+        }
+        .features-with-dynamic-radio-and-dropdown .row:has(.cmp-collapse) .collapse-btn::after {
+          position: absolute;
+          right: 0;
+        }
+      }
+      @media (min-width: 1240px) {
+        .features-with-dynamic-radio-and-dropdown.var1 .section,
+        .features-with-dynamic-radio-and-dropdown.var1 .section-content {
+          max-width: 1240px;
+        }
+      }
+      @media (min-width: 1200px) and (max-width: 1239px) {
+        .features-with-dynamic-radio-and-dropdown.var1 .section,
+        .features-with-dynamic-radio-and-dropdown.var1 .section-content {
+          max-width: 1200px;
+        }
+      }
+      .features-with-dynamic-radio-and-dropdown.var1 .payment-description {
+        white-space: pre-wrap;
+      }
+      .features-with-dynamic-radio-and-dropdown.var1 .radio-badge {
+        margin-left: 0.5rem;
+        font-size: var(--RadioBtnBadgeFontSize);
+        --bs-badge-font-weight: normal;
+      }
+      .features-with-dynamic-radio-and-dropdown.var1 .cmp-addtocart,
+      .features-with-dynamic-radio-and-dropdown.var1 .offer-terms,
+      .features-with-dynamic-radio-and-dropdown.var1 .os-supported,
+      .features-with-dynamic-radio-and-dropdown.var1 .radio-section-button {
+        margin-block: var(--ContentSpacer);
+      }
+      .features-with-dynamic-radio-and-dropdown.var1 .payment-cards {
+        height: 26px;
+      }
+      @media (max-width: 575.98px) {
+        .features-with-dynamic-radio-and-dropdown.var1 .price-row {
+          line-height: 1;
+        }
+        .features-with-dynamic-radio-and-dropdown.var1 .price-row:has(.radio-badge:not(:empty)) {
+          margin-top: var(--SpacerXl);
+        }
+        .features-with-dynamic-radio-and-dropdown.var1 .radio-button {
+          padding-inline: var(--SpacerXs);
+          --RadioBtnPadding: 1.5rem;
+        }
+        .features-with-dynamic-radio-and-dropdown.var1 .cmp-radiobuttonitem {
+          position: relative;
+        }
+        .features-with-dynamic-radio-and-dropdown.var1 .radio-badge {
+          position: absolute;
+          top: 15%;
+          left: 8.5%;
+        }
+        .features-with-dynamic-radio-and-dropdown.var1 .final-price {
+          padding-left: var(--SpacerXs);
+        }
+      }
+      @media (max-width: 991.98px) {
+        .features-with-dynamic-radio-and-dropdown .section-content > .cmp-flex-column > div > .row > .flexcolumn-col:first-child {
+          display: none;
+        }
+        .features-with-dynamic-radio-and-dropdown .section-content > .cmp-flex-column > div > .row > .flexcolumn-col:nth-child(2) {
+          width: 100%;
+        }
+        .features-with-dynamic-radio-and-dropdown .button-label {
+          width: 100%;
+        }
+      }
+      /*! CSS Used from: Embedded */
+      .btn {
+        cursor: pointer;
+        -webkit-user-select: none;
+        user-select: none;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .btn {
+          transition: none;
+        }
+      }
+      .btn:disabled {
+        pointer-events: none;
+      }
+      a {
+        cursor: pointer;
+      }
+      .cmp-radiobutton .radio-button {
+        cursor: pointer;
+      }
+      .cmp-radiobutton .radio-input[type="radio"] {
+        cursor: pointer;
+      }
+      .cmp-radiobutton .radio-input[type="radio"]:checked {
+        transition: background 0.15s, box-shadow 0.1s;
+      }
     </style>
     <!-- Load Bootstrap non-blocking -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" /> </noscript>
   </head>
   <body>
-    <div class="cmp-herosection placeholder-glow snipcss-VGODg">
-    <div class="section section-color primary" id="herosection--1270841381" data-attribute-section-tag="hero">
-        <div class="section-content">
-            <div class="cmp-flex-column placeholder-glow">
-                <div id="flexcolumn--781858253">
-                    <div class="flexcolumn-row row">
-                        <div class="flexcolumn-col">
-                            <div class="flexcolumn-content">
-                                <div class="cmp-richtext placeholder-glow">
-                                    <div class="richtext" id="richtext-1e61ead868">
-                                        <div class="feature-title"> See what's included in&nbsp;<span class="rte_placeholder"><b>Basic</b></span>&nbsp;protection <br>
-                                            <div> (1 Device) <br></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="htmlcomponentreference">
-                                    <div class="collapse-card placeholder-glow" id="features">
-                                        <div class="collapse-hdr"> Security </div>
-                                        <div class="collapse-title"><a id="feature1" class="collapse-btn" data-bs-toggle="collapse" href="#label1" aria-expanded="false"><span class="collapse-btn-content"><span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="49" height="48" viewBox="0 0 44 48" fill="none">
-                                                            <path d="M22.2705 0.341309L42.6719 6.71729L43.3027 6.91455V31.0815C43.3025 34.9266 41.2551 38.481 37.9287 40.4097L27.2686 46.5903C24.0115 48.4786 19.9925 48.4784 16.7354 46.5903L6.0752 40.4097C2.85262 38.5413 0.829456 35.1471 0.706055 31.4409L0.700195 31.0815V6.91455L1.33203 6.71729L21.7334 0.341309L22.002 0.257324L22.2705 0.341309ZM2.50098 8.23682V31.0815L2.50586 31.3804C2.60852 34.4678 4.29306 37.2954 6.97754 38.8521L17.6377 45.0327C20.3366 46.5973 23.6674 46.5975 26.3662 45.0327L37.0254 38.8521C39.7965 37.2454 41.5027 34.2847 41.5029 31.0815V8.23682L22.002 2.14307L2.50098 8.23682ZM19.3262 7.80518C26.1351 7.97756 31.6015 13.5514 31.6016 20.4019L31.5977 20.7271C31.5286 23.4502 30.5936 25.957 29.0605 27.9868L34.9395 33.8657L33.666 35.1392L27.873 29.3462C25.5957 31.605 22.462 33.0024 19.001 33.0024L18.6758 32.9985C11.9752 32.8286 6.57417 27.4277 6.4043 20.7271L6.40039 20.4019C6.40049 13.4428 12.042 7.80147 19.001 7.80127L19.3262 7.80518ZM19.001 9.60107C13.0362 9.60127 8.20029 14.437 8.2002 20.4019C8.20044 26.3666 13.0363 31.2024 19.001 31.2026C24.9659 31.2026 29.8015 26.3667 29.8018 20.4019C29.8017 14.4369 24.966 9.60107 19.001 9.60107Z" fill="url(#paint0_linear_2476_109)" />
-                                                            <defs>
-                                                                <linearGradient id="paint0_linear_2476_109" x1="0.700195" y1="0.257324" x2="48.1404" y2="42.5844" gradientUnits="userSpaceOnUse">
-                                                                    <stop offset="0.322995" stop-color="#FF1C1C" />
-                                                                    <stop offset="0.935481" stop-color="#A60054" />
-                                                                </linearGradient>
-                                                            </defs>
-                                                        </svg></span><b id="style-wv3av" class="style-wv3av">New!&nbsp;</b>Scam Detector</span></a>
-                                            <div class="collapse-body collapse" id="label1" aria-labelledby="feature1" data-bs-parent="#features"> Automatic scam protection for text, email, and video. </div>
-                                        </div>
-                                        <div class="collapse-title"><a id="feature2" class="collapse-btn" data-bs-toggle="collapse" href="#label2" aria-expanded="false"><span class="collapse-btn-content"><span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="49" height="48" viewBox="0 0 81 80">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M67.772 65.619C74.044 58.916 77.885 49.909 77.885 40c0-20.718-16.792-37.5-37.5-37.5-9.906 0-18.915 3.84-25.62 10.113L67.773 65.62Zm-1.768 1.768C59.3 73.66 50.29 77.5 40.384 77.5c-20.707 0-37.5-16.782-37.5-37.5 0-9.908 3.841-18.916 10.114-25.619l15.15 15.15a6.801 6.801 0 0 0-.503 2.41v1.214H23.15c-1.748 0-3.056-1.309-3.056-3.056v-5.745a1.25 1.25 0 0 0-2.5 0V30.1c0 3.128 2.428 5.556 5.556 5.556h4.495v.748c0 1.311.051 2.62.143 3.925H23.15c-3.128 0-5.556 2.429-5.556 5.556v5.606a1.25 1.25 0 0 0 2.5 0v-5.605c0-1.748 1.308-3.056 3.056-3.056h4.859c.175 1.663.404 3.32.66 4.966l.005.031.006.031c.19.91.491 1.775.888 2.583-2.75.36-4.79 2.639-4.79 5.506v7.174a1.25 1.25 0 0 0 2.5 0v-7.174c0-1.747 1.309-3.056 3.056-3.056h.869a11.732 11.732 0 0 0 2.637 2.239l.008.004.72.44.008.006.01.006a11.263 11.263 0 0 0 11.423.02l.836-.423.055-.028.052-.033c1.345-.856 2.49-2.064 3.375-3.412l3.176 3.177v8.233a1.25 1.25 0 1 0 2.5 0v-5.733l10 10ZM30.16 31.693l8.454 8.449a1.247 1.247 0 0 0-.091.47v13.853a8.83 8.83 0 0 1-2.66-1.03l-.707-.432c-2.02-1.257-3.522-3.263-4.022-5.625-.573-3.686-.99-7.341-.99-10.975v-4.437c.002-.089.007-.18.016-.273Zm10.863 22.929V42.549l7.437 7.434c-.738 1.224-1.708 2.288-2.802 2.998l-.812.411-.036.018-.034.02a8.8 8.8 0 0 1-3.754 1.192ZM80.385 40c0 22.1-17.912 40-40 40-22.089 0-40-17.9-40-40s17.911-40 40-40c22.088 0 40 17.9 40 40Zm-18.46-16.896c.69 0 1.25.56 1.25 1.25V30.1c0 3.13-2.43 5.556-5.566 5.556h-4.474v.758c0 1.324-.03 2.62-.106 3.916h4.58c3.136 0 5.567 2.425 5.567 5.556v5.605a1.25 1.25 0 0 1-2.5 0v-5.605c0-1.746-1.307-3.056-3.067-3.056h-4.782c-.078.74-.172 1.486-.285 2.242a1.25 1.25 0 0 1-2.473-.37c.419-2.792.566-5.455.566-8.288v-1.841a1.271 1.271 0 0 1 0-.333v-2.271c0-1.624-1.1-3.164-2.616-3.709a22.96 22.96 0 0 0-6.384-1.283v5.99a1.25 1.25 0 0 1-2.5 0v-5.99a22.65 22.65 0 0 0-5.549 1.009 1.25 1.25 0 0 1-.749-2.386c.66-.207 1.324-.386 1.992-.537v-2.147c0-3.127 2.428-5.556 5.556-5.556 3.126 0 5.556 2.416 5.556 5.556v2.147c.984.222 1.957.503 2.914.841l.005.002c2.499.895 4.276 3.37 4.276 6.063v1.187h4.473c1.76 0 3.066-1.31 3.066-3.056v-5.745c0-.69.56-1.25 1.25-1.25Zm-18.484 1.524v-1.713c0-1.755-1.307-3.056-3.056-3.056-1.747 0-3.056 1.31-3.056 3.056v1.712a25.153 25.153 0 0 1 6.112.001Z" fill="url(#a)" />
-                                                            <defs>
-                                                                <linearGradient id="a" x1=".385" y1="0" x2="80.385" y2="80" gradientUnits="userSpaceOnUse">
-                                                                    <stop offset=".323" stop-color="#FF1C1C" />
-                                                                    <stop offset=".935" stop-color="#A60054" />
-                                                                </linearGradient>
-                                                            </defs>
-                                                        </svg></span>Premium Antivirus</span></a>
-                                            <div class="collapse-body collapse" id="label2" aria-labelledby="feature2" data-bs-parent="#features"> Protection for all your compatible devices. </div>
-                                        </div>
-                                        <div class="collapse-hdr"> Privacy </div>
-                                        <div class="collapse-title collapse-disabled"><a id="feature3" class="collapse-btn" data-bs-toggle="collapse" href="#label3" aria-expanded="false"><span class="collapse-btn-content"><span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="49" height="48" viewBox="0 0 81 80">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M40.995.326c-4.531 0-7.856 4.259-6.757 8.655l4.836 19.345h-9.079c-8.008 0-14.5 6.492-14.5 14.5V65.326c0 1.1-.623 2.631-1.682 4.342-1.022 1.65-2.305 3.241-3.313 4.398-1.379 1.581-.349 4.26 1.91 4.26h53.085v-35.5c0-8.008-6.492-14.5-14.5-14.5h-8.079l4.837-19.345C48.851 4.585 45.526.326 40.994.326Zm-3.847 7.927a3.965 3.965 0 1 1 7.694 0l-3.847 15.389-3.847-15.389ZM18.495 42.826c0-6.351 5.149-11.5 11.5-11.5h21c6.351 0 11.5 5.149 11.5 11.5v6h-44V42.826Zm0 9V65.326c0 1.989-1.025 4.133-2.131 5.92-.935 1.511-2.043 2.943-2.995 4.08h14.126v-11h3v11h9v-8h3v8h8.5v-4.5h3v4.5h8.5v-23.5h-44Z" fill="url(#a)" />
-                                                            <defs>
-                                                                <linearGradient id="a" x1="9.877" y1=".326" x2="83.619" y2="52.908" gradientUnits="userSpaceOnUse">
-                                                                    <stop offset=".323" stop-color="#FF1C1C" />
-                                                                    <stop offset=".935" stop-color="#A60054" />
-                                                                </linearGradient>
-                                                            </defs>
-                                                        </svg></span>Personal Data Cleanup</span></a>
-                                            <div class="collapse-body collapse" id="label3" aria-labelledby="feature3" data-bs-parent="#features"> Scan for your info online and then remove it from the web. </div>
-                                        </div>
-                                        <div class="collapse-title"><a id="feature4" class="collapse-btn" data-bs-toggle="collapse" href="#label4" aria-expanded="false"><span class="collapse-btn-content"><span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="50" height="48" viewBox="0 0 82 80">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="m15.303 29.716-2.117-2.126c6.072-6.05 14.447-9.79 23.696-9.79 9.316 0 17.745 3.794 23.827 9.922l-2.112 2.13c-5.54-5.59-13.223-9.052-21.715-9.052-8.423 0-16.05 3.406-21.58 8.916Zm21.578 4.866c3.07 0 5.948.825 8.425 2.264l-4.35 1.349a13.783 13.783 0 0 0-4.075-.613c-3.802 0-7.245 1.54-9.739 4.029l-2.116-2.126a16.732 16.732 0 0 1 11.855-4.903Zm.105 13.193c1.023 0 1.946.427 2.6 1.112l-2.6 2.613-2.601-2.613a3.587 3.587 0 0 1 2.601-1.112Zm-.099-43.763c13.1 0 24.958 5.32 33.532 13.916l2.112-2.13C63.415 6.664 50.81 1.012 36.887 1.012c-13.871 0-26.433 5.61-35.54 14.683l2.117 2.126C12.028 9.288 23.842 4.012 36.887 4.012Zm25.289 32.879.445.138L80.23 42.5l1.055.328v19.872c0 4.423-2.362 8.51-6.194 10.719l-10.083 5.81a5.672 5.672 0 0 1-5.664 0l-10.083-5.81a12.372 12.372 0 0 1-6.194-10.72V42.828l1.055-.328 17.609-5.47.445-.138Zm-16.11 8.145V62.7a9.372 9.372 0 0 0 4.693 8.12l10.082 5.81a2.673 2.673 0 0 0 2.67 0l10.082-5.81a9.372 9.372 0 0 0 4.692-8.12V45.036l-16.11-5.004-16.108 5.004Zm6.466 12.532 5.52 5.52c.106.106.279.106.385 0l6.36-6.361 7.614-7.614 2.122 2.121-7.614 7.614-6.36 6.36a3.273 3.273 0 0 1-4.629 0l-5.519-5.518 2.121-2.122Z" fill="url(#a)" />
-                                                            <defs>
-                                                                <linearGradient id="a" x1="1.347" y1="1.012" x2="80.315" y2="80.944" gradientUnits="userSpaceOnUse">
-                                                                    <stop offset=".323" stop-color="#FF1C1C" />
-                                                                    <stop offset=".935" stop-color="#A60054" />
-                                                                </linearGradient>
-                                                            </defs>
-                                                        </svg></span>Secure VPN</span></a>
-                                            <div class="collapse-body collapse" id="label4" aria-labelledby="feature4" data-bs-parent="#features"> Protect your Wi-Fi connection with unlimited VPN. </div>
-                                        </div>
-                                        <div class="collapse-hdr"> Identity </div>
-                                        <div class="collapse-title collapse-disabled"><a id="feature5" class="collapse-btn" data-bs-toggle="collapse" href="#label5" aria-expanded="false"><span class="collapse-btn-content"><span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="48" height="48" viewBox="0 0 80 80">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M40.447.568 40 .428l-.447.14-34 10.626-1.053.329v40.275a17.97 17.97 0 0 0 8.957 15.546l17.765 10.3a17.5 17.5 0 0 0 17.556 0l17.765-10.3A17.97 17.97 0 0 0 75.5 51.798V11.523l-1.053-.33-34-10.625ZM7.5 51.798v-38.07L40 3.572l32.5 10.156v38.07a14.97 14.97 0 0 1-7.462 12.951l-17.765 10.3a14.5 14.5 0 0 1-14.546 0l-17.765-10.3A14.97 14.97 0 0 1 7.5 51.798Zm33.265-18.39a2.444 2.444 0 1 1 4.888 0 2.444 2.444 0 0 1-4.888 0Zm2.444-5.415a5.415 5.415 0 1 0 0 10.83 5.415 5.415 0 0 0 0-10.83Zm0-2.03a7.445 7.445 0 1 0 0 14.891 7.445 7.445 0 0 0 0-14.89ZM32.793 33.41c0-5.753 4.663-10.417 10.416-10.417s10.417 4.664 10.417 10.417-4.664 10.416-10.417 10.416-10.416-4.663-10.416-10.416Zm-12.93 9.785a1.486 1.486 0 0 0-2.74 1.15A28.358 28.358 0 0 0 34.16 60.207a1.486 1.486 0 1 0 .95-2.815 25.386 25.386 0 0 1-15.247-14.2Zm17.875-23.457c.38.727.1 1.625-.627 2.005a13.16 13.16 0 0 0-7.063 11.667c0 7.269 5.893 13.161 13.161 13.161 5.515 0 10.242-3.393 12.199-8.21a13.12 13.12 0 0 0 .962-4.951 1.486 1.486 0 1 1 2.972 0 16.09 16.09 0 0 1-1.181 6.069c-2.397 5.9-8.186 10.063-14.952 10.063-8.91 0-16.132-7.222-16.132-16.132 0-6.214 3.513-11.605 8.655-14.299.727-.38 1.625-.1 2.006.627ZM24.095 29.09a1.486 1.486 0 0 0-2.899-.652c-.36 1.6-.55 3.264-.55 4.97 0 12.46 10.102 22.562 22.563 22.562 2.118 0 4.17-.292 6.118-.84a1.486 1.486 0 0 0-.804-2.86 19.61 19.61 0 0 1-5.314.73c-10.82 0-19.591-8.772-19.591-19.592 0-1.485.165-2.93.477-4.318Z" fill="url(#a)" />
-                                                            <defs>
-                                                                <linearGradient id="a" x1="4.5" y1=".428" x2="83.562" y2="70.969" gradientUnits="userSpaceOnUse">
-                                                                    <stop offset=".323" stop-color="#FF1C1C" />
-                                                                    <stop offset=".935" stop-color="#A60054" />
-                                                                </linearGradient>
-                                                            </defs>
-                                                        </svg></span>$1M Identity Theft Coverage</span></a>
-                                            <div class="collapse-body collapse" id="label5" aria-labelledby="feature5" data-bs-parent="#features"> Up to $1 million for ID fraud recovery expenses. </div>
-                                        </div>
-                                        <div class="collapse-title collapse-disabled"><a id="feature6" class="collapse-btn" data-bs-toggle="collapse" href="#label6" aria-expanded="false"><span class="collapse-btn-content"><span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="48" height="48" viewBox="0 0 80 80">
-                                                            <g clip-path="url(#a)">
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M23.943 3.74a1.5 1.5 0 0 1 2.046-.559l14.041 8.023 14.04-8.023a1.5 1.5 0 1 1 1.489 2.605l-14.027 8.015v23.99l20.771-11.992-.072-16.16a1.5 1.5 0 1 1 3-.013l.072 16.171 13.969 8.148a1.5 1.5 0 0 1-1.512 2.592l-13.956-8.14-20.77 11.992 20.77 11.992 13.956-8.14a1.5 1.5 0 0 1 1.512 2.59L65.303 54.98l-.072 16.17a1.5 1.5 0 1 1-3-.013l.072-16.159-20.77-11.992v23.991l14.027 8.016a1.5 1.5 0 0 1-1.489 2.605l-14.04-8.024-14.04 8.023a1.5 1.5 0 0 1-1.49-2.604l14.031-8.018V42.987L17.755 54.983l.072 16.157a1.5 1.5 0 1 1-3 .013l-.072-16.17L.786 46.834a1.5 1.5 0 1 1 1.512-2.592l13.957 8.142 20.778-11.996-20.775-11.995-13.96 8.143a1.5 1.5 0 1 1-1.512-2.591l13.969-8.148.071-16.171a1.5 1.5 0 0 1 3 .013l-.071 16.154L38.532 37.79V13.804L24.501 5.786a1.5 1.5 0 0 1-.558-2.047Z" fill="url(#b)" />
-                                                            </g>
-                                                            <defs>
-                                                                <linearGradient id="b" x1=".042" y1="2.983" x2="74.687" y2="82.781" gradientUnits="userSpaceOnUse">
-                                                                    <stop offset=".323" stop-color="#FF1C1C" />
-                                                                    <stop offset=".935" stop-color="#A60054" />
-                                                                </linearGradient>
-                                                                <clipPath id="a">
-                                                                    <path fill="#fff" d="M0 0h80v80H0z" />
-                                                                </clipPath>
-                                                            </defs>
-                                                        </svg></span>Security Freeze</span></a>
-                                            <div class="collapse-body collapse" id="label6" aria-labelledby="feature6" data-bs-parent="#features"> Prevent access to your credit info, bank, and utility accounts. </div>
-                                        </div>
-                                        <div class="collapse-hdr"></div>
-                                        <div class="collapse-title collapse-disabled"><a id="feature7" class="collapse-btn" data-bs-toggle="collapse" href="#label7" aria-expanded="false"><span class="collapse-btn-content"><span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="49" height="48" viewBox="0 0 81 80">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="m40.832.568-.447-.14-.448.14-34 10.625-1.052.33v40.275a17.97 17.97 0 0 0 8.957 15.546l17.765 10.3a17.5 17.5 0 0 0 17.555 0l17.766-10.3a17.97 17.97 0 0 0 8.957-15.546V11.522l-1.053-.329-34-10.625ZM7.885 51.798v-38.07l32.5-10.157 32.5 10.157v38.07a14.97 14.97 0 0 1-7.462 12.95L47.658 75.05a14.5 14.5 0 0 1-14.546 0l-17.766-10.3a14.97 14.97 0 0 1-7.461-12.951ZM42.7 20v-1.5h-3v5.037c-1.728.194-3.585.738-5.16 1.794-2.115 1.418-3.655 3.727-3.655 7.05 0 1.468.555 3.55 2.165 5.278 1.65 1.771 4.278 3.031 8.15 3.031 3.202 0 4.786.97 5.6 1.916.854.993 1.085 2.222 1.085 3.084 0 .865-.265 2.47-1.219 3.814-.892 1.257-2.476 2.424-5.466 2.424-1.771 0-3.669-.297-5.071-1.112-1.292-.75-2.244-1.972-2.244-4.197v-1.5h-3v1.5c0 3.346 1.566 5.53 3.737 6.79 1.572.914 3.405 1.318 5.078 1.458V60.5h3v-5.655c3.086-.356 5.14-1.81 6.413-3.605 1.407-1.984 1.772-4.248 1.772-5.55 0-1.305-.336-3.325-1.811-5.04-1.517-1.763-4.025-2.96-7.874-2.96-3.18 0-4.961-1.01-5.955-2.076-1.034-1.11-1.36-2.432-1.36-3.233 0-2.25.978-3.655 2.326-4.558 1.418-.95 3.306-1.37 4.989-1.37 1.58 0 3.144.522 4.283 1.393 1.123.859 1.772 1.997 1.772 3.297v1.5h3v-1.5c0-2.415-1.24-4.372-2.95-5.68-1.308-1-2.925-1.654-4.605-1.9V20Z" fill="url(#a)" />
-                                                            <defs>
-                                                                <linearGradient id="a" x1="4.885" y1=".428" x2="83.947" y2="70.969" gradientUnits="userSpaceOnUse">
-                                                                    <stop offset=".323" stop-color="#FF1C1C" />
-                                                                    <stop offset=".935" stop-color="#A60054" />
-                                                                </linearGradient>
-                                                            </defs>
-                                                        </svg></span>$25K Ransomware Coverage</span></a>
-                                            <div class="collapse-body collapse" id="label7" aria-labelledby="feature7" data-bs-parent="#features"> We cover you for up to 25k in losses due to ransomware. </div>
-                                        </div>
-                                        <div class="collapse-title collapse-disabled"><a id="feature8" class="collapse-btn" data-bs-toggle="collapse" href="#label8" aria-expanded="false"><span class="collapse-btn-content"><span class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="49" height="48" viewBox="0 0 81 80">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="m41.043.568-.447-.14-.448.14-34 10.626-1.053.329v40.275a17.97 17.97 0 0 0 8.957 15.546l17.766 10.3a17.5 17.5 0 0 0 17.555 0l17.766-10.3a17.97 17.97 0 0 0 8.957-15.546V11.523l-1.053-.33-34-10.625ZM8.095 51.798v-38.07l32.5-10.156 32.5 10.156v38.07a14.97 14.97 0 0 1-7.461 12.951l-17.766 10.3a14.5 14.5 0 0 1-14.546 0l-17.765-10.3a14.97 14.97 0 0 1-7.462-12.951Zm16.044-5.59c0-8.996 7.293-16.29 16.29-16.29 8.996 0 16.29 7.294 16.29 16.29 0 8.997-7.294 16.29-16.29 16.29-8.997 0-16.29-7.293-16.29-16.29Zm3.6-14.644a19.332 19.332 0 0 0-6.687 14.644c0 10.702 8.675 19.377 19.377 19.377 10.701 0 19.376-8.675 19.376-19.377 0-5.848-2.59-11.091-6.687-14.644v-5.418c0-7.008-5.681-12.69-12.69-12.69-7.007 0-12.688 5.682-12.688 12.69v5.418Zm22.292-2.19v-3.228a9.603 9.603 0 1 0-19.205 0v3.229a19.288 19.288 0 0 1 9.603-2.543c3.494 0 6.772.924 9.602 2.543Zm-9.602 11.69a2.915 2.915 0 1 0 0 5.83 2.915 2.915 0 0 0 0-5.83Zm-6.002 2.915a6.002 6.002 0 1 1 7.545 5.802v3.115h-3.087V49.78a6.004 6.004 0 0 1-4.458-5.802Z" fill="url(#a)" />
-                                                            <defs>
-                                                                <linearGradient id="a" x1="5.095" y1=".428" x2="84.158" y2="70.969" gradientUnits="userSpaceOnUse">
-                                                                    <stop offset=".323" stop-color="#FF1C1C" />
-                                                                    <stop offset=".935" stop-color="#A60054" />
-                                                                </linearGradient>
-                                                            </defs>
-                                                        </svg></span>Credit Lock</span></a>
-                                            <div class="collapse-body collapse" id="label8" aria-labelledby="feature8" data-bs-parent="#features"> Lock and unlock your credit to stop unauthorized opening of accounts. </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cmp-richtext placeholder-glow">
-                                    <div class="richtext" id="richtext-8f60b29b32">
-                                        <div class="features-post-content"><a title="See All Benefits" aria-label="See All Benefits" data-pagesection="hero" data-navelement="compare-all-plans" href="#seeAllBenefits" target="_self">Compare all plans</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flexcolumn-col">
-                            <div class="flexcolumn-content">
-                                <div class="cmp-richtext placeholder-glow">
-                                    <div class="richtext" id="richtext-5b965d3fa0">
-                                        <h1 class="hero-title">Stay on the <b>safe side</b></h1>
-                                        <div class="hero-description"><b><span class="rteFontColor fc-attention">New </span></b>Scam Detector spots risky texts, emails, and videos to keep you safer from financial fraud. </div>
-                                    </div>
-                                </div>
-                                <div class="cmp-richtext placeholder-glow">
-                                    <div class="richtext" id="richtext-cd282313d7">
-                                        <div class="section-title"> Select an option below to see what's included. </div>
-                                    </div>
-                                </div>
-                                <div class="cmp-radiobutton placeholder-glow">
-                                    <div class="radio-container">
-                                        <div class="radio-section-button">
-                                            <form>
-                                                <fieldset>
-                                                    <legend class="d-none">Offer details</legend>
-                                                    <div class="cmp-radiobuttonitem placeholder-glow"><label class="radio-button" for="sp1radiomulti">
-                                                            <div class="radio-col1"><input class="radio-input" id="sp1radiomulti" type="radio" value="sp1"></div>
-                                                            <div class="radio-col2">
-                                                                <div class="radio-content">
-                                                                    <div class="price-row">
-                                                                        <div class="radioitem-left">
-                                                                            <div class="radio-title">Advanced&nbsp;</div>
-                                                                            <div class="radio-badge"></div>
-                                                                        </div>
-                                                                        <div class="radioitem-right">
-                                                                            <div class="price-container"><span class="retail-price">$199.99</span></div>
-                                                                            <div class="final-price"><span class="rte_ddr">$59.99*</span></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="price-row">
-                                                                        <div class="radioitem-left">
-                                                                            <div class="plan-description">1-year</div>
-                                                                            <div class="radio-discountdescription"><span class="discount-description">Save</span>&nbsp;<span class="discount-price">$140.00</span></div>
-                                                                        </div>
-                                                                        <div class="radioitem-right">
-                                                                            <div class="payment-description"><span class="rte_ddr" data-ddr-path="custom" data-ddr-name="Custom DDR Expression">Available in 4 payments of $15.00 with&nbsp;<img class="rte_image" src="https://media.mcafeeassets.com/content/dam/npcld/standard/ecommerce/en-us/payments/paypal-logo.svg" alt="PayPal" width="65" height="18"></span></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </label></div>
-                                                    <div class="cmp-radiobuttonitem placeholder-glow"><label class="radio-button" for="sp2radiomulti">
-                                                            <div class="radio-col1"><input class="radio-input" id="sp2radiomulti" type="radio" value="sp2"></div>
-                                                            <div class="radio-col2">
-                                                                <div class="radio-content">
-                                                                    <div class="price-row">
-                                                                        <div class="radioitem-left">
-                                                                            <div class="radio-title">Premium&nbsp;</div>
-                                                                            <div class="radio-badge"></div>
-                                                                        </div>
-                                                                        <div class="radioitem-right">
-                                                                            <div class="price-container"><span class="retail-price">$149.99</span></div>
-                                                                            <div class="final-price"><span class="rte_ddr">$39.99*</span></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="price-row">
-                                                                        <div class="radioitem-left">
-                                                                            <div class="plan-description">1-year</div>
-                                                                            <div class="radio-discountdescription"><span class="discount-description">Save</span>&nbsp;<span class="discount-price">$110.00</span></div>
-                                                                        </div>
-                                                                        <div class="radioitem-right">
-                                                                            <div class="payment-description"><span class="rte_ddr" data-ddr-path="custom" data-ddr-name="Custom DDR Expression">Available in 4 payments of $10.00 with&nbsp;<img class="rte_image" src="https://media.mcafeeassets.com/content/dam/npcld/standard/ecommerce/en-us/payments/paypal-logo.svg" alt="PayPal" width="65" height="18"></span></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </label></div>
-                                                    <div class="cmp-radiobuttonitem placeholder-glow"><label class="radio-button" for="sp3radiomulti">
-                                                            <div class="radio-col1"><input class="radio-input" id="sp3radiomulti" type="radio" value="sp3"></div>
-                                                            <div class="radio-col2">
-                                                                <div class="radio-content">
-                                                                    <div class="price-row">
-                                                                        <div class="radioitem-left">
-                                                                            <div class="radio-title">Basic&nbsp;<span class="rte_ddr" data-ddr-path="/content/ecommerce/personalization/data-rules/component/is-mls-product/jcr:content/root" data-ddr-name="Is MLS product">- 1 Device</span></div>
-                                                                            <div class="radio-badge"><span class="rte_ddr" data-ddr-path="custom" data-ddr-name="Custom DDR Expression">Recommended</span></div>
-                                                                        </div>
-                                                                        <div class="radioitem-right">
-                                                                            <div class="price-container"><span class="retail-price">$89.99</span></div>
-                                                                            <div class="final-price"><span class="rte_ddr">$19.99*</span></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="price-row">
-                                                                        <div class="radioitem-left">
-                                                                            <div class="plan-description">1-year</div>
-                                                                            <div class="radio-discountdescription"><span class="discount-description">Save</span>&nbsp;<span class="discount-price">$70.00</span></div>
-                                                                        </div>
-                                                                        <div class="radioitem-right">
-                                                                            <div class="payment-description"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </label></div>
-                                                </fieldset>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cmp-price-dropdown placeholder-glow"></div>
-                                <div class="cmp-richtext placeholder-glow"></div>
-                                <div class="cmp-richtext placeholder-glow">
-                                    <div class="richtext" id="richtext-f0fde9fd74">
-                                        <div class="dropdown-description"><b>That's about $1.66 a month!</b> </div>
-                                        <div class="dropdown-description"></div>
-                                        <div class="section-description"></div>
-                                    </div>
-                                </div>
-                                <div class="cmp-addtocart">
-                                    <div class="button" id="addtocart--1005584958"><a class="button-label btn" data-buynow-click="true" data-nav-element-click="true" data-offer-bind="multi=sp1" data-button-section-tag="hero" aria-label="renew-now" aria-disabled="false" href="https://www.mcafee.com/consumer/en-us/ipz/checkout/2web/payment.html?tm_local_lp_ab_test_variant=expops-1126_en-us_atp_dpp_pre_upsell_cl&amp;adobe_mc_sdid=SDID%3D126CAA963BB90C38-4CC52938F91A8783%7CMCORGID%3DA729776A5245B1590A490D44%40AdobeOrg%7CTS%3D1767671374&amp;moguid=2c32131f-4a76-4203-b670-f2d48dc643d7&amp;culture=en-us&amp;affid=1660&amp;osn=default&amp;pkgCode=mls_539&amp;pt=1yp&amp;fp=19.99&amp;curCode=usd&amp;btnSec=hero&amp;cctype=expiry&amp;ccstype=default&amp;cseg=default&amp;cexp=&amp;ccta=mls_539%3A1yp%3A19.99%3Ausd%3Ahero&amp;ccpubn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault%40mls_539%3A1yp%3A19.99%3Ausd%3Ahero&amp;ccpun=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault&amp;ccpn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl&amp;csrc=&amp;csrcl2=&amp;cls=0&amp;cupf=0&amp;cafcat=&amp;ccoe=&amp;ccoel2=&amp;ak_culture=&amp;ipst=&amp;ipcon=&amp;origin=macrometa" data-ccpubn="en-us:lp:atp:exp:standard-pre_cl@:default@mls_539:1yp:19.99:usd:hero" data-navigation-element="expiry|default|539:hero:renew-now" data-packagecode="539" data-plantype="1yp" data-finalprice="19.99" data-currencycode="usd" data-section="hero" data-__p3_preload="0"><span class="cta-text">Renew now</span></a></div>
-                                </div>
-                                <div class="cmp-flex-column placeholder-glow">
-                                    <div id="flexcolumn-1295024009">
-                                        <div class="flexcolumn-row row">
-                                            <div class="flexcolumn-col">
-                                                <div class="flexcolumn-content">
-                                                    <div class="cmp-collapse placeholder-glow">
-                                                        <div class="collapse-container d-flex flex-column-reverse" id="collapse-177286386-container">
-                                                            <div class="collapse expand-content" id="collapse-177286386-expand">
-                                                                <div class="expand-description"> In the first 30 days of your purchase, you can decide to cancel your subscription for any reason and ask us for a refund. </div>
-                                                            </div>
-                                                            <div class="collapse-title"><a class="collapse-btn btn collapseLabel" data-bs-toggle="collapse" href="#" data-bs-target="#collapse-177286386-expand" aria-expanded="false" aria-controls="collapse-177286386-expand"><span class="collapse-icon"><svg width="16px" height="16px" viewBox="0 0 16 16">
-                                                                            <path fill="#24BC98" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm4.58-10.648L6.666 11.56 3.42 8.152l1.158-1.103L6.667 9.24 11.42 4.25l1.158 1.103z" />
-                                                                        </svg></span>30-day money back guarantee</a> <a class="collapse-btn btn expandLabel d-none" data-bs-toggle="collapse" data-bs-target="#collapse-177286386-expand" href="#" aria-expanded="false" aria-controls="collapse-177286386-expand"><span class="collapse-icon"><svg width="16px" height="16px" viewBox="0 0 16 16">
-                                                                            <path fill="#24BC98" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm4.58-10.648L6.666 11.56 3.42 8.152l1.158-1.103L6.667 9.24 11.42 4.25l1.158 1.103z" />
-                                                                        </svg></span>30-day money back guarantee</a></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flexcolumn-col">
-                                                <div class="flexcolumn-content">
-                                                    <div class="cmp-collapse placeholder-glow">
-                                                        <div class="collapse-container d-flex flex-column-reverse" id="collapse--19227119-container">
-                                                            <div class="collapse expand-content" id="collapse--19227119-expand">
-                                                                <div class="expand-description"> If we cannot remove a virus from your supported device we’ll refund you the amount you paid for your current term subscription. </div>
-                                                            </div>
-                                                            <div class="collapse-title"><a class="collapse-btn btn collapseLabel" data-bs-toggle="collapse" href="#" data-bs-target="#collapse--19227119-expand" aria-expanded="false" aria-controls="collapse--19227119-expand"><span class="collapse-icon"><svg width="16px" height="16px" viewBox="0 0 16 16">
-                                                                            <path fill="#24BC98" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm4.58-10.648L6.666 11.56 3.42 8.152l1.158-1.103L6.667 9.24 11.42 4.25l1.158 1.103z" />
-                                                                        </svg></span>100% guarantee viruses removed</a> <a class="collapse-btn btn expandLabel d-none" data-bs-toggle="collapse" data-bs-target="#collapse--19227119-expand" href="#" aria-expanded="false" aria-controls="collapse--19227119-expand"><span class="collapse-icon"><svg width="16px" height="16px" viewBox="0 0 16 16">
-                                                                            <path fill="#24BC98" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm4.58-10.648L6.666 11.56 3.42 8.152l1.158-1.103L6.667 9.24 11.42 4.25l1.158 1.103z" />
-                                                                        </svg></span>100% guarantee viruses removed</a></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cmp-richtext placeholder-glow">
-                                    <div class="richtext" id="richtext-77bd45371a">
-                                        <div class="offer-terms"> * Price shown is for first year. See <a title="Offer Terms" aria-label="Offer Terms" data-pagesection="hero" data-navelement="offer-terms" href="#offerterms" target="_self">offer details</a> below. </div>
-                                        <div class="payment-cards" data-payment-methods="true" data-payment-initialized="true"><span id="paymenttypeicon_CreditCard" title="VISA" alt="VISA" data-pimage="visa" class="pay-icon visa me-1"></span><span id="paymenttypeicon_CreditCard" title="MASTER CARD" alt="MASTER CARD" data-pimage="mastercard" class="pay-icon mastercard me-1"></span><span id="paymenttypeicon_CreditCard" title="AMERICAN EXPRESS" alt="AMERICAN EXPRESS" data-pimage="americanexpress" class="pay-icon americanexpress me-1"></span><span id="paymenttypeicon_CreditCard" title="DISCOVER" alt="DISCOVER" data-pimage="discover" class="pay-icon discover me-1"></span><span id="paymenttypeicon_CreditCard" title="PayPal" alt="PayPal" data-pimage="paypal" class="pay-icon paypal me-1"></span></div>
-                                        <div class="os-supported"> Windows® | macOS® | Android™ | iOS® | ChromeOS® </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="cmp-sectionpicker">
+      <div class="alert-without-close var1">
+        <div class="cmp-alert placeholder-glow">
+          <div class="alert alert-dismissible" id="alert-629127666" role="alert">
+            <span class="alert-badge">NEW!</span>
+            <div class="alert-message">Introducing <b>Scam Detector!</b> Spot scams before they hit you – and your wallet.</div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
+    <section class="cmp-sectionpicker">
+      <div class="header-with-supscription pre-var1">
+        <header class="cmp-section placeholder-glow">
+          <div class="section section-color primary" id="section-1114449835" data-attribute-section-tag="header">
+            <div class="section-content">
+              <div class="cmp-flex-column placeholder-glow">
+                <div id="flexcolumn--849428381">
+                  <div class="flexcolumn-row row">
+                    <div class="flexcolumn-col">
+                      <div class="flexcolumn-content">
+                        <div class="cmp-richtext placeholder-glow">
+                          <div class="richtext" id="richtext-e7278919bd">
+                            <div class="header-wrapper">
+                              <div class="companylogo">
+                                <span class="companylogo-image"><img class="rte_image" src="https://media.mcafeeassets.com/content/dam/npcld/standard/ecommerce/en-us/company-logo/McAfeeHzRed.svg" alt="McAfee Logo" width="148" height="28" /></span>
+                              </div>
+                              <!----><!---->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flexcolumn-col">
+                      <div class="flexcolumn-content">
+                        <div class="cmp-richtext placeholder-glow">
+                          <div class="richtext" id="richtext-3ab970f831">
+                            <div class="subscription-wrapper">
+                              <div class="subscription-alert">
+                                <span class="subscription-msg"
+                                  ><span class="rte_ddr"
+                                    >Your free trial <b><span class="rteFontColor fc-hilite">is about to expire</span></b
+                                    ><img
+                                      class="rte_image"
+                                      src="data:image/svg+xml;charset=UTF-8,%3Csvg%20fill%3D%22%23ff1c1c%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%200.48%200.48%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0.24%200c-0.132%200%20-0.24%200.108%20-0.24%200.24s0.108%200.24%200.24%200.24%200.24%20-0.108%200.24%20-0.24%20-0.108%20-0.24%20-0.24%20-0.24zM0.27%200.39h-0.06v-0.06h0.06v0.06zM0.27%200.3h-0.06v-0.21h0.06v0.21z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E"
+                                      alt="Alert Icon"
+                                      width="24"
+                                      height="24" /></span
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+    </section>
+    <section class="cmp-sectionpicker">
+      <div class="features-with-dynamic-radio-and-dropdown var1">
+        <div class="cmp-herosection placeholder-glow">
+          <div class="section section-color primary" id="herosection--1270841381" data-attribute-section-tag="hero">
+            <div class="section-content">
+              <div class="cmp-flex-column placeholder-glow">
+                <div id="flexcolumn--781858253">
+                  <div class="flexcolumn-row row">
+                    <div class="flexcolumn-col">
+                      <div class="flexcolumn-content">
+                        <div class="cmp-richtext placeholder-glow">
+                          <div class="richtext" id="richtext-1e61ead868">
+                            <div class="feature-title">
+                              See what's included in&nbsp;<span class="rte_placeholder"><b>Basic</b></span
+                              >&nbsp;protection <br />
+                              <div>(1 Device) <br /></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="htmlcomponentreference">
+                          <div class="collapse-card placeholder-glow" id="features">
+                            <div class="collapse-hdr">Security</div>
+                            <div class="collapse-title">
+                              <a id="feature1" class="collapse-btn collapsed" data-bs-toggle="collapse" href="#label1" aria-expanded="false"
+                                ><span class="collapse-btn-content"
+                                  ><span class="collapse-icon"
+                                    ><svg xmlns="http://www.w3.org/2000/svg" width="49" height="48" viewBox="0 0 44 48" fill="none">
+                                      <path
+                                        d="M22.2705 0.341309L42.6719 6.71729L43.3027 6.91455V31.0815C43.3025 34.9266 41.2551 38.481 37.9287 40.4097L27.2686 46.5903C24.0115 48.4786 19.9925 48.4784 16.7354 46.5903L6.0752 40.4097C2.85262 38.5413 0.829456 35.1471 0.706055 31.4409L0.700195 31.0815V6.91455L1.33203 6.71729L21.7334 0.341309L22.002 0.257324L22.2705 0.341309ZM2.50098 8.23682V31.0815L2.50586 31.3804C2.60852 34.4678 4.29306 37.2954 6.97754 38.8521L17.6377 45.0327C20.3366 46.5973 23.6674 46.5975 26.3662 45.0327L37.0254 38.8521C39.7965 37.2454 41.5027 34.2847 41.5029 31.0815V8.23682L22.002 2.14307L2.50098 8.23682ZM19.3262 7.80518C26.1351 7.97756 31.6015 13.5514 31.6016 20.4019L31.5977 20.7271C31.5286 23.4502 30.5936 25.957 29.0605 27.9868L34.9395 33.8657L33.666 35.1392L27.873 29.3462C25.5957 31.605 22.462 33.0024 19.001 33.0024L18.6758 32.9985C11.9752 32.8286 6.57417 27.4277 6.4043 20.7271L6.40039 20.4019C6.40049 13.4428 12.042 7.80147 19.001 7.80127L19.3262 7.80518ZM19.001 9.60107C13.0362 9.60127 8.20029 14.437 8.2002 20.4019C8.20044 26.3666 13.0363 31.2024 19.001 31.2026C24.9659 31.2026 29.8015 26.3667 29.8018 20.4019C29.8017 14.4369 24.966 9.60107 19.001 9.60107Z"
+                                        fill="url(#paint0_linear_2476_109)"></path>
+                                      <defs>
+                                        <linearGradient id="paint0_linear_2476_109" x1="0.700195" y1="0.257324" x2="48.1404" y2="42.5844" gradientUnits="userSpaceOnUse">
+                                          <stop offset="0.322995" stop-color="#FF1C1C"></stop>
+                                          <stop offset="0.935481" stop-color="#A60054"></stop>
+                                        </linearGradient>
+                                      </defs></svg></span
+                                  ><b style="color: rgb(192, 24, 24)">New!&nbsp;</b>Scam Detector</span
+                                ></a
+                              >
+                              <div class="collapse-body collapse" id="label1" aria-labelledby="feature1" data-bs-parent="#features" style="">Automatic scam protection for text, email, and video.</div>
+                            </div>
+                            <div class="collapse-title">
+                              <a id="feature2" class="collapse-btn collapsed" data-bs-toggle="collapse" href="#label2" aria-expanded="false"
+                                ><span class="collapse-btn-content"
+                                  ><span class="collapse-icon"
+                                    ><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="49" height="48" viewBox="0 0 81 80">
+                                      <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M67.772 65.619C74.044 58.916 77.885 49.909 77.885 40c0-20.718-16.792-37.5-37.5-37.5-9.906 0-18.915 3.84-25.62 10.113L67.773 65.62Zm-1.768 1.768C59.3 73.66 50.29 77.5 40.384 77.5c-20.707 0-37.5-16.782-37.5-37.5 0-9.908 3.841-18.916 10.114-25.619l15.15 15.15a6.801 6.801 0 0 0-.503 2.41v1.214H23.15c-1.748 0-3.056-1.309-3.056-3.056v-5.745a1.25 1.25 0 0 0-2.5 0V30.1c0 3.128 2.428 5.556 5.556 5.556h4.495v.748c0 1.311.051 2.62.143 3.925H23.15c-3.128 0-5.556 2.429-5.556 5.556v5.606a1.25 1.25 0 0 0 2.5 0v-5.605c0-1.748 1.308-3.056 3.056-3.056h4.859c.175 1.663.404 3.32.66 4.966l.005.031.006.031c.19.91.491 1.775.888 2.583-2.75.36-4.79 2.639-4.79 5.506v7.174a1.25 1.25 0 0 0 2.5 0v-7.174c0-1.747 1.309-3.056 3.056-3.056h.869a11.732 11.732 0 0 0 2.637 2.239l.008.004.72.44.008.006.01.006a11.263 11.263 0 0 0 11.423.02l.836-.423.055-.028.052-.033c1.345-.856 2.49-2.064 3.375-3.412l3.176 3.177v8.233a1.25 1.25 0 1 0 2.5 0v-5.733l10 10ZM30.16 31.693l8.454 8.449a1.247 1.247 0 0 0-.091.47v13.853a8.83 8.83 0 0 1-2.66-1.03l-.707-.432c-2.02-1.257-3.522-3.263-4.022-5.625-.573-3.686-.99-7.341-.99-10.975v-4.437c.002-.089.007-.18.016-.273Zm10.863 22.929V42.549l7.437 7.434c-.738 1.224-1.708 2.288-2.802 2.998l-.812.411-.036.018-.034.02a8.8 8.8 0 0 1-3.754 1.192ZM80.385 40c0 22.1-17.912 40-40 40-22.089 0-40-17.9-40-40s17.911-40 40-40c22.088 0 40 17.9 40 40Zm-18.46-16.896c.69 0 1.25.56 1.25 1.25V30.1c0 3.13-2.43 5.556-5.566 5.556h-4.474v.758c0 1.324-.03 2.62-.106 3.916h4.58c3.136 0 5.567 2.425 5.567 5.556v5.605a1.25 1.25 0 0 1-2.5 0v-5.605c0-1.746-1.307-3.056-3.067-3.056h-4.782c-.078.74-.172 1.486-.285 2.242a1.25 1.25 0 0 1-2.473-.37c.419-2.792.566-5.455.566-8.288v-1.841a1.271 1.271 0 0 1 0-.333v-2.271c0-1.624-1.1-3.164-2.616-3.709a22.96 22.96 0 0 0-6.384-1.283v5.99a1.25 1.25 0 0 1-2.5 0v-5.99a22.65 22.65 0 0 0-5.549 1.009 1.25 1.25 0 0 1-.749-2.386c.66-.207 1.324-.386 1.992-.537v-2.147c0-3.127 2.428-5.556 5.556-5.556 3.126 0 5.556 2.416 5.556 5.556v2.147c.984.222 1.957.503 2.914.841l.005.002c2.499.895 4.276 3.37 4.276 6.063v1.187h4.473c1.76 0 3.066-1.31 3.066-3.056v-5.745c0-.69.56-1.25 1.25-1.25Zm-18.484 1.524v-1.713c0-1.755-1.307-3.056-3.056-3.056-1.747 0-3.056 1.31-3.056 3.056v1.712a25.153 25.153 0 0 1 6.112.001Z"
+                                        fill="url(#a)"></path>
+                                      <defs>
+                                        <linearGradient id="a" x1=".385" y1="0" x2="80.385" y2="80" gradientUnits="userSpaceOnUse">
+                                          <stop offset=".323" stop-color="#FF1C1C"></stop>
+                                          <stop offset=".935" stop-color="#A60054"></stop>
+                                        </linearGradient>
+                                      </defs></svg></span
+                                  >Premium Antivirus</span
+                                ></a
+                              >
+                              <div class="collapse-body collapse" id="label2" aria-labelledby="feature2" data-bs-parent="#features">Protection for all your compatible devices.</div>
+                            </div>
+                            <div class="collapse-hdr">Privacy</div>
+                            <div class="collapse-title collapse-disabled">
+                              <a id="feature3" class="collapse-btn collapsed" data-bs-toggle="collapse" href="#label3" aria-expanded="false"
+                                ><span class="collapse-btn-content"
+                                  ><span class="collapse-icon"
+                                    ><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="49" height="48" viewBox="0 0 81 80">
+                                      <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M40.995.326c-4.531 0-7.856 4.259-6.757 8.655l4.836 19.345h-9.079c-8.008 0-14.5 6.492-14.5 14.5V65.326c0 1.1-.623 2.631-1.682 4.342-1.022 1.65-2.305 3.241-3.313 4.398-1.379 1.581-.349 4.26 1.91 4.26h53.085v-35.5c0-8.008-6.492-14.5-14.5-14.5h-8.079l4.837-19.345C48.851 4.585 45.526.326 40.994.326Zm-3.847 7.927a3.965 3.965 0 1 1 7.694 0l-3.847 15.389-3.847-15.389ZM18.495 42.826c0-6.351 5.149-11.5 11.5-11.5h21c6.351 0 11.5 5.149 11.5 11.5v6h-44V42.826Zm0 9V65.326c0 1.989-1.025 4.133-2.131 5.92-.935 1.511-2.043 2.943-2.995 4.08h14.126v-11h3v11h9v-8h3v8h8.5v-4.5h3v4.5h8.5v-23.5h-44Z"
+                                        fill="url(#a)"></path>
+                                      <defs>
+                                        <linearGradient id="a" x1="9.877" y1=".326" x2="83.619" y2="52.908" gradientUnits="userSpaceOnUse">
+                                          <stop offset=".323" stop-color="#FF1C1C"></stop>
+                                          <stop offset=".935" stop-color="#A60054"></stop>
+                                        </linearGradient>
+                                      </defs></svg></span
+                                  >Personal Data Cleanup</span
+                                ></a
+                              >
+                              <div class="collapse-body collapse" id="label3" aria-labelledby="feature3" data-bs-parent="#features">Scan for your info online and then remove it from the web.</div>
+                            </div>
+                            <div class="collapse-title">
+                              <a id="feature4" class="collapse-btn collapsed" data-bs-toggle="collapse" href="#label4" aria-expanded="false"
+                                ><span class="collapse-btn-content"
+                                  ><span class="collapse-icon"
+                                    ><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="50" height="48" viewBox="0 0 82 80">
+                                      <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="m15.303 29.716-2.117-2.126c6.072-6.05 14.447-9.79 23.696-9.79 9.316 0 17.745 3.794 23.827 9.922l-2.112 2.13c-5.54-5.59-13.223-9.052-21.715-9.052-8.423 0-16.05 3.406-21.58 8.916Zm21.578 4.866c3.07 0 5.948.825 8.425 2.264l-4.35 1.349a13.783 13.783 0 0 0-4.075-.613c-3.802 0-7.245 1.54-9.739 4.029l-2.116-2.126a16.732 16.732 0 0 1 11.855-4.903Zm.105 13.193c1.023 0 1.946.427 2.6 1.112l-2.6 2.613-2.601-2.613a3.587 3.587 0 0 1 2.601-1.112Zm-.099-43.763c13.1 0 24.958 5.32 33.532 13.916l2.112-2.13C63.415 6.664 50.81 1.012 36.887 1.012c-13.871 0-26.433 5.61-35.54 14.683l2.117 2.126C12.028 9.288 23.842 4.012 36.887 4.012Zm25.289 32.879.445.138L80.23 42.5l1.055.328v19.872c0 4.423-2.362 8.51-6.194 10.719l-10.083 5.81a5.672 5.672 0 0 1-5.664 0l-10.083-5.81a12.372 12.372 0 0 1-6.194-10.72V42.828l1.055-.328 17.609-5.47.445-.138Zm-16.11 8.145V62.7a9.372 9.372 0 0 0 4.693 8.12l10.082 5.81a2.673 2.673 0 0 0 2.67 0l10.082-5.81a9.372 9.372 0 0 0 4.692-8.12V45.036l-16.11-5.004-16.108 5.004Zm6.466 12.532 5.52 5.52c.106.106.279.106.385 0l6.36-6.361 7.614-7.614 2.122 2.121-7.614 7.614-6.36 6.36a3.273 3.273 0 0 1-4.629 0l-5.519-5.518 2.121-2.122Z"
+                                        fill="url(#a)"></path>
+                                      <defs>
+                                        <linearGradient id="a" x1="1.347" y1="1.012" x2="80.315" y2="80.944" gradientUnits="userSpaceOnUse">
+                                          <stop offset=".323" stop-color="#FF1C1C"></stop>
+                                          <stop offset=".935" stop-color="#A60054"></stop>
+                                        </linearGradient>
+                                      </defs></svg></span
+                                  >Secure VPN</span
+                                ></a
+                              >
+                              <div class="collapse-body collapse" id="label4" aria-labelledby="feature4" data-bs-parent="#features">Protect your Wi-Fi connection with unlimited VPN.</div>
+                            </div>
+                            <div class="collapse-hdr">Identity</div>
+                            <div class="collapse-title collapse-disabled">
+                              <a id="feature5" class="collapse-btn collapsed" data-bs-toggle="collapse" href="#label5" aria-expanded="false"
+                                ><span class="collapse-btn-content"
+                                  ><span class="collapse-icon"
+                                    ><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="48" height="48" viewBox="0 0 80 80">
+                                      <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M40.447.568 40 .428l-.447.14-34 10.626-1.053.329v40.275a17.97 17.97 0 0 0 8.957 15.546l17.765 10.3a17.5 17.5 0 0 0 17.556 0l17.765-10.3A17.97 17.97 0 0 0 75.5 51.798V11.523l-1.053-.33-34-10.625ZM7.5 51.798v-38.07L40 3.572l32.5 10.156v38.07a14.97 14.97 0 0 1-7.462 12.951l-17.765 10.3a14.5 14.5 0 0 1-14.546 0l-17.765-10.3A14.97 14.97 0 0 1 7.5 51.798Zm33.265-18.39a2.444 2.444 0 1 1 4.888 0 2.444 2.444 0 0 1-4.888 0Zm2.444-5.415a5.415 5.415 0 1 0 0 10.83 5.415 5.415 0 0 0 0-10.83Zm0-2.03a7.445 7.445 0 1 0 0 14.891 7.445 7.445 0 0 0 0-14.89ZM32.793 33.41c0-5.753 4.663-10.417 10.416-10.417s10.417 4.664 10.417 10.417-4.664 10.416-10.417 10.416-10.416-4.663-10.416-10.416Zm-12.93 9.785a1.486 1.486 0 0 0-2.74 1.15A28.358 28.358 0 0 0 34.16 60.207a1.486 1.486 0 1 0 .95-2.815 25.386 25.386 0 0 1-15.247-14.2Zm17.875-23.457c.38.727.1 1.625-.627 2.005a13.16 13.16 0 0 0-7.063 11.667c0 7.269 5.893 13.161 13.161 13.161 5.515 0 10.242-3.393 12.199-8.21a13.12 13.12 0 0 0 .962-4.951 1.486 1.486 0 1 1 2.972 0 16.09 16.09 0 0 1-1.181 6.069c-2.397 5.9-8.186 10.063-14.952 10.063-8.91 0-16.132-7.222-16.132-16.132 0-6.214 3.513-11.605 8.655-14.299.727-.38 1.625-.1 2.006.627ZM24.095 29.09a1.486 1.486 0 0 0-2.899-.652c-.36 1.6-.55 3.264-.55 4.97 0 12.46 10.102 22.562 22.563 22.562 2.118 0 4.17-.292 6.118-.84a1.486 1.486 0 0 0-.804-2.86 19.61 19.61 0 0 1-5.314.73c-10.82 0-19.591-8.772-19.591-19.592 0-1.485.165-2.93.477-4.318Z"
+                                        fill="url(#a)"></path>
+                                      <defs>
+                                        <linearGradient id="a" x1="4.5" y1=".428" x2="83.562" y2="70.969" gradientUnits="userSpaceOnUse">
+                                          <stop offset=".323" stop-color="#FF1C1C"></stop>
+                                          <stop offset=".935" stop-color="#A60054"></stop>
+                                        </linearGradient>
+                                      </defs></svg></span
+                                  >$1M Identity Theft Coverage</span
+                                ></a
+                              >
+                              <div class="collapse-body collapse" id="label5" aria-labelledby="feature5" data-bs-parent="#features">Up to $1 million for ID fraud recovery expenses.</div>
+                            </div>
+                            <div class="collapse-title collapse-disabled">
+                              <a id="feature6" class="collapse-btn collapsed" data-bs-toggle="collapse" href="#label6" aria-expanded="false"
+                                ><span class="collapse-btn-content"
+                                  ><span class="collapse-icon"
+                                    ><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="48" height="48" viewBox="0 0 80 80">
+                                      <g clip-path="url(#a)">
+                                        <path
+                                          fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M23.943 3.74a1.5 1.5 0 0 1 2.046-.559l14.041 8.023 14.04-8.023a1.5 1.5 0 1 1 1.489 2.605l-14.027 8.015v23.99l20.771-11.992-.072-16.16a1.5 1.5 0 1 1 3-.013l.072 16.171 13.969 8.148a1.5 1.5 0 0 1-1.512 2.592l-13.956-8.14-20.77 11.992 20.77 11.992 13.956-8.14a1.5 1.5 0 0 1 1.512 2.59L65.303 54.98l-.072 16.17a1.5 1.5 0 1 1-3-.013l.072-16.159-20.77-11.992v23.991l14.027 8.016a1.5 1.5 0 0 1-1.489 2.605l-14.04-8.024-14.04 8.023a1.5 1.5 0 0 1-1.49-2.604l14.031-8.018V42.987L17.755 54.983l.072 16.157a1.5 1.5 0 1 1-3 .013l-.072-16.17L.786 46.834a1.5 1.5 0 1 1 1.512-2.592l13.957 8.142 20.778-11.996-20.775-11.995-13.96 8.143a1.5 1.5 0 1 1-1.512-2.591l13.969-8.148.071-16.171a1.5 1.5 0 0 1 3 .013l-.071 16.154L38.532 37.79V13.804L24.501 5.786a1.5 1.5 0 0 1-.558-2.047Z"
+                                          fill="url(#b)"></path>
+                                      </g>
+                                      <defs>
+                                        <linearGradient id="b" x1=".042" y1="2.983" x2="74.687" y2="82.781" gradientUnits="userSpaceOnUse">
+                                          <stop offset=".323" stop-color="#FF1C1C"></stop>
+                                          <stop offset=".935" stop-color="#A60054"></stop>
+                                        </linearGradient>
+                                        <clipPath id="a"><path fill="#fff" d="M0 0h80v80H0z"></path></clipPath>
+                                      </defs></svg></span
+                                  >Security Freeze</span
+                                ></a
+                              >
+                              <div class="collapse-body collapse" id="label6" aria-labelledby="feature6" data-bs-parent="#features">Prevent access to your credit info, bank, and utility accounts.</div>
+                            </div>
+                            <div class="collapse-hdr"></div>
+                            <div class="collapse-title collapse-disabled">
+                              <a id="feature7" class="collapse-btn collapsed" data-bs-toggle="collapse" href="#label7" aria-expanded="false"
+                                ><span class="collapse-btn-content"
+                                  ><span class="collapse-icon"
+                                    ><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="49" height="48" viewBox="0 0 81 80">
+                                      <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="m40.832.568-.447-.14-.448.14-34 10.625-1.052.33v40.275a17.97 17.97 0 0 0 8.957 15.546l17.765 10.3a17.5 17.5 0 0 0 17.555 0l17.766-10.3a17.97 17.97 0 0 0 8.957-15.546V11.522l-1.053-.329-34-10.625ZM7.885 51.798v-38.07l32.5-10.157 32.5 10.157v38.07a14.97 14.97 0 0 1-7.462 12.95L47.658 75.05a14.5 14.5 0 0 1-14.546 0l-17.766-10.3a14.97 14.97 0 0 1-7.461-12.951ZM42.7 20v-1.5h-3v5.037c-1.728.194-3.585.738-5.16 1.794-2.115 1.418-3.655 3.727-3.655 7.05 0 1.468.555 3.55 2.165 5.278 1.65 1.771 4.278 3.031 8.15 3.031 3.202 0 4.786.97 5.6 1.916.854.993 1.085 2.222 1.085 3.084 0 .865-.265 2.47-1.219 3.814-.892 1.257-2.476 2.424-5.466 2.424-1.771 0-3.669-.297-5.071-1.112-1.292-.75-2.244-1.972-2.244-4.197v-1.5h-3v1.5c0 3.346 1.566 5.53 3.737 6.79 1.572.914 3.405 1.318 5.078 1.458V60.5h3v-5.655c3.086-.356 5.14-1.81 6.413-3.605 1.407-1.984 1.772-4.248 1.772-5.55 0-1.305-.336-3.325-1.811-5.04-1.517-1.763-4.025-2.96-7.874-2.96-3.18 0-4.961-1.01-5.955-2.076-1.034-1.11-1.36-2.432-1.36-3.233 0-2.25.978-3.655 2.326-4.558 1.418-.95 3.306-1.37 4.989-1.37 1.58 0 3.144.522 4.283 1.393 1.123.859 1.772 1.997 1.772 3.297v1.5h3v-1.5c0-2.415-1.24-4.372-2.95-5.68-1.308-1-2.925-1.654-4.605-1.9V20Z"
+                                        fill="url(#a)"></path>
+                                      <defs>
+                                        <linearGradient id="a" x1="4.885" y1=".428" x2="83.947" y2="70.969" gradientUnits="userSpaceOnUse">
+                                          <stop offset=".323" stop-color="#FF1C1C"></stop>
+                                          <stop offset=".935" stop-color="#A60054"></stop>
+                                        </linearGradient>
+                                      </defs></svg></span
+                                  >$25K Ransomware Coverage</span
+                                ></a
+                              >
+                              <div class="collapse-body collapse" id="label7" aria-labelledby="feature7" data-bs-parent="#features">We cover you for up to 25k in losses due to ransomware.</div>
+                            </div>
+                            <div class="collapse-title collapse-disabled">
+                              <a id="feature8" class="collapse-btn collapsed" data-bs-toggle="collapse" href="#label8" aria-expanded="false"
+                                ><span class="collapse-btn-content"
+                                  ><span class="collapse-icon"
+                                    ><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="49" height="48" viewBox="0 0 81 80">
+                                      <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="m41.043.568-.447-.14-.448.14-34 10.626-1.053.329v40.275a17.97 17.97 0 0 0 8.957 15.546l17.766 10.3a17.5 17.5 0 0 0 17.555 0l17.766-10.3a17.97 17.97 0 0 0 8.957-15.546V11.523l-1.053-.33-34-10.625ZM8.095 51.798v-38.07l32.5-10.156 32.5 10.156v38.07a14.97 14.97 0 0 1-7.461 12.951l-17.766 10.3a14.5 14.5 0 0 1-14.546 0l-17.765-10.3a14.97 14.97 0 0 1-7.462-12.951Zm16.044-5.59c0-8.996 7.293-16.29 16.29-16.29 8.996 0 16.29 7.294 16.29 16.29 0 8.997-7.294 16.29-16.29 16.29-8.997 0-16.29-7.293-16.29-16.29Zm3.6-14.644a19.332 19.332 0 0 0-6.687 14.644c0 10.702 8.675 19.377 19.377 19.377 10.701 0 19.376-8.675 19.376-19.377 0-5.848-2.59-11.091-6.687-14.644v-5.418c0-7.008-5.681-12.69-12.69-12.69-7.007 0-12.688 5.682-12.688 12.69v5.418Zm22.292-2.19v-3.228a9.603 9.603 0 1 0-19.205 0v3.229a19.288 19.288 0 0 1 9.603-2.543c3.494 0 6.772.924 9.602 2.543Zm-9.602 11.69a2.915 2.915 0 1 0 0 5.83 2.915 2.915 0 0 0 0-5.83Zm-6.002 2.915a6.002 6.002 0 1 1 7.545 5.802v3.115h-3.087V49.78a6.004 6.004 0 0 1-4.458-5.802Z"
+                                        fill="url(#a)"></path>
+                                      <defs>
+                                        <linearGradient id="a" x1="5.095" y1=".428" x2="84.158" y2="70.969" gradientUnits="userSpaceOnUse">
+                                          <stop offset=".323" stop-color="#FF1C1C"></stop>
+                                          <stop offset=".935" stop-color="#A60054"></stop>
+                                        </linearGradient>
+                                      </defs></svg></span
+                                  >Credit Lock</span
+                                ></a
+                              >
+                              <div class="collapse-body collapse" id="label8" aria-labelledby="feature8" data-bs-parent="#features">Lock and unlock your credit to stop unauthorized opening of accounts.</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cmp-richtext placeholder-glow">
+                          <div class="richtext" id="richtext-8f60b29b32">
+                            <div class="features-post-content"><a title="See All Benefits" aria-label="See All Benefits" data-pagesection="hero" data-navelement="compare-all-plans" href="#seeAllBenefits" target="_self">Compare all plans</a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flexcolumn-col">
+                      <div class="flexcolumn-content">
+                        <div class="cmp-richtext placeholder-glow">
+                          <div class="richtext" id="richtext-5b965d3fa0">
+                            <h1 class="hero-title">Stay on the <b>safe side</b></h1>
+                            <div class="hero-description">
+                              <b><span class="rteFontColor fc-attention">New </span></b>Scam Detector spots risky texts, emails, and videos to keep you safer from financial fraud.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cmp-richtext placeholder-glow">
+                          <div class="richtext" id="richtext-cd282313d7"><div class="section-title">Select an option below to see what's included.</div></div>
+                        </div>
+                        <div class="cmp-radiobutton placeholder-glow">
+                          <div class="radio-container">
+                            <div class="radio-section-button">
+                              <form>
+                                <fieldset>
+                                  <legend class="d-none">Offer details</legend>
+                                  <div class="cmp-radiobuttonitem placeholder-glow">
+                                    <label class="radio-button" for="sp1radiomulti"
+                                      ><div class="radio-col1"><input class="radio-input" id="sp1radiomulti" type="radio" value="sp1" /></div>
+                                      <div class="radio-col2">
+                                        <div class="radio-content">
+                                          <div class="price-row">
+                                            <div class="radioitem-left">
+                                              <div class="radio-title">Advanced&nbsp;<!----></div>
+                                              <div class="radio-badge"><!----></div>
+                                            </div>
+                                            <div class="radioitem-right">
+                                              <div class="price-container"><span class="retail-price">$199.99</span></div>
+                                              <div class="final-price"><span class="rte_ddr">$59.99*</span></div>
+                                            </div>
+                                          </div>
+                                          <div class="price-row">
+                                            <div class="radioitem-left">
+                                              <div class="plan-description">1-year</div>
+                                              <div class="radio-discountdescription"><span class="discount-description">Save</span>&nbsp;<span class="discount-price">$140.00</span></div>
+                                            </div>
+                                            <div class="radioitem-right">
+                                              <div class="payment-description">
+                                                <span class="rte_ddr" data-ddr-path="custom" data-ddr-name="Custom DDR Expression">Available in 4 payments of $15.00 with&nbsp;<img class="rte_image" src="https://media.mcafeeassets.com/content/dam/npcld/standard/ecommerce/en-us/payments/paypal-logo.svg" alt="PayPal" width="65" height="18" /></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div></div
+                                    ></label>
+                                  </div>
+                                  <div class="cmp-radiobuttonitem placeholder-glow">
+                                    <label class="radio-button" for="sp2radiomulti"
+                                      ><div class="radio-col1"><input class="radio-input" id="sp2radiomulti" type="radio" value="sp2" /></div>
+                                      <div class="radio-col2">
+                                        <div class="radio-content">
+                                          <div class="price-row">
+                                            <div class="radioitem-left">
+                                              <div class="radio-title">Premium&nbsp;<!----></div>
+                                              <div class="radio-badge"><!----></div>
+                                            </div>
+                                            <div class="radioitem-right">
+                                              <div class="price-container"><span class="retail-price">$149.99</span></div>
+                                              <div class="final-price"><span class="rte_ddr">$39.99*</span></div>
+                                            </div>
+                                          </div>
+                                          <div class="price-row">
+                                            <div class="radioitem-left">
+                                              <div class="plan-description">1-year</div>
+                                              <div class="radio-discountdescription"><span class="discount-description">Save</span>&nbsp;<span class="discount-price">$110.00</span></div>
+                                            </div>
+                                            <div class="radioitem-right">
+                                              <div class="payment-description">
+                                                <span class="rte_ddr" data-ddr-path="custom" data-ddr-name="Custom DDR Expression">Available in 4 payments of $10.00 with&nbsp;<img class="rte_image" src="https://media.mcafeeassets.com/content/dam/npcld/standard/ecommerce/en-us/payments/paypal-logo.svg" alt="PayPal" width="65" height="18" /></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div></div
+                                    ></label>
+                                  </div>
+                                  <div class="cmp-radiobuttonitem placeholder-glow">
+                                    <label class="radio-button" for="sp3radiomulti"
+                                      ><div class="radio-col1"><input class="radio-input" id="sp3radiomulti" type="radio" value="sp3" /></div>
+                                      <div class="radio-col2">
+                                        <div class="radio-content">
+                                          <div class="price-row">
+                                            <div class="radioitem-left">
+                                              <div class="radio-title">Basic&nbsp;<span class="rte_ddr" data-ddr-path="/content/ecommerce/personalization/data-rules/component/is-mls-product/jcr:content/root" data-ddr-name="Is MLS product">- 1 Device</span></div>
+                                              <div class="radio-badge"><span class="rte_ddr" data-ddr-path="custom" data-ddr-name="Custom DDR Expression">Recommended</span></div>
+                                            </div>
+                                            <div class="radioitem-right">
+                                              <div class="price-container"><span class="retail-price">$89.99</span></div>
+                                              <div class="final-price"><span class="rte_ddr">$19.99*</span></div>
+                                            </div>
+                                          </div>
+                                          <div class="price-row">
+                                            <div class="radioitem-left">
+                                              <div class="plan-description">1-year</div>
+                                              <div class="radio-discountdescription"><span class="discount-description">Save</span>&nbsp;<span class="discount-price">$70.00</span></div>
+                                            </div>
+                                            <div class="radioitem-right">
+                                              <div class="payment-description"><!----></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div></label
+                                    >
+                                  </div>
+                                </fieldset>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cmp-price-dropdown placeholder-glow"><!----></div>
+                        <div class="cmp-richtext placeholder-glow"><!----></div>
+                        <div class="cmp-richtext placeholder-glow">
+                          <div class="richtext" id="richtext-f0fde9fd74">
+                            <div class="dropdown-description">
+                              <!----><b>That's about $1.66 a month!</b>
+                              <!---->
+                            </div>
+                            <div class="dropdown-description"><!----></div>
+                            <div class="section-description"><!----></div>
+                          </div>
+                        </div>
+                        <div class="cmp-addtocart">
+                          <div class="button" id="addtocart--1005584958">
+                            <a
+                              class="button-label btn"
+                              data-buynow-click="true"
+                              data-nav-element-click="true"
+                              data-offer-bind="multi=sp1"
+                              data-button-section-tag="hero"
+                              aria-label="renew-now"
+                              aria-disabled="false"
+                              href="https://www.mcafee.com/consumer/en-us/ipz/checkout/2web/payment.html?tm_local_lp_ab_test_variant=expops-1126_en-us_atp_dpp_pre_upsell_cl&amp;adobe_mc_sdid=SDID%3D126CAA963BB90C38-4CC52938F91A8783%7CMCORGID%3DA729776A5245B1590A490D44%40AdobeOrg%7CTS%3D1767671374&amp;moguid=2c32131f-4a76-4203-b670-f2d48dc643d7&amp;culture=en-us&amp;affid=1660&amp;osn=default&amp;pkgCode=mls_539&amp;pt=1yp&amp;fp=19.99&amp;curCode=usd&amp;btnSec=hero&amp;cctype=expiry&amp;ccstype=default&amp;cseg=default&amp;cexp=&amp;ccta=mls_539%3A1yp%3A19.99%3Ausd%3Ahero&amp;ccpubn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault%40mls_539%3A1yp%3A19.99%3Ausd%3Ahero&amp;ccpun=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault&amp;ccpn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl&amp;csrc=&amp;csrcl2=&amp;cls=0&amp;cupf=0&amp;cafcat=&amp;ccoe=&amp;ccoel2=&amp;ak_culture=&amp;ipst=&amp;ipcon=&amp;origin=macrometa"
+                              data-ccpubn="en-us:lp:atp:exp:standard-pre_cl@:default@mls_539:1yp:19.99:usd:hero"
+                              data-navigation-element="expiry|default|539:hero:renew-now"
+                              data-packagecode="539"
+                              data-plantype="1yp"
+                              data-finalprice="19.99"
+                              data-currencycode="usd"
+                              data-section="hero"
+                              data-__p3_preload="0"
+                              ><span class="cta-text">Renew now</span></a
+                            >
+                          </div>
+                        </div>
+                        <div class="cmp-flex-column placeholder-glow">
+                          <div id="flexcolumn-1295024009">
+                            <div class="flexcolumn-row row">
+                              <div class="flexcolumn-col">
+                                <div class="flexcolumn-content">
+                                  <div class="cmp-collapse placeholder-glow">
+                                    <div class="collapse-container d-flex flex-column-reverse" id="collapse-177286386-container">
+                                      <div class="collapse expand-content" id="collapse-177286386-expand"><div class="expand-description">In the first 30 days of your purchase, you can decide to cancel your subscription for any reason and ask us for a refund.</div></div>
+                                      <div class="collapse-title">
+                                        <a class="collapse-btn btn collapseLabel" data-bs-toggle="collapse" href="#" data-bs-target="#collapse-177286386-expand" aria-expanded="false" aria-controls="collapse-177286386-expand"
+                                          ><span class="collapse-icon"
+                                            ><svg width="16px" height="16px" viewBox="0 0 16 16"><path fill="#24BC98" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm4.58-10.648L6.666 11.56 3.42 8.152l1.158-1.103L6.667 9.24 11.42 4.25l1.158 1.103z"></path></svg></span
+                                          >30-day money back guarantee</a
+                                        >
+                                        <a class="collapse-btn btn expandLabel d-none" data-bs-toggle="collapse" data-bs-target="#collapse-177286386-expand" href="#" aria-expanded="false" aria-controls="collapse-177286386-expand"
+                                          ><span class="collapse-icon"
+                                            ><svg width="16px" height="16px" viewBox="0 0 16 16"><path fill="#24BC98" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm4.58-10.648L6.666 11.56 3.42 8.152l1.158-1.103L6.667 9.24 11.42 4.25l1.158 1.103z"></path></svg></span
+                                          >30-day money back guarantee</a
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flexcolumn-col">
+                                <div class="flexcolumn-content">
+                                  <div class="cmp-collapse placeholder-glow">
+                                    <div class="collapse-container d-flex flex-column-reverse" id="collapse--19227119-container">
+                                      <div class="collapse expand-content" id="collapse--19227119-expand"><div class="expand-description">If we cannot remove a virus from your supported device we’ll refund you the amount you paid for your current term subscription.</div></div>
+                                      <div class="collapse-title">
+                                        <a class="collapse-btn btn collapseLabel" data-bs-toggle="collapse" href="#" data-bs-target="#collapse--19227119-expand" aria-expanded="false" aria-controls="collapse--19227119-expand"
+                                          ><span class="collapse-icon"
+                                            ><svg width="16px" height="16px" viewBox="0 0 16 16"><path fill="#24BC98" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm4.58-10.648L6.666 11.56 3.42 8.152l1.158-1.103L6.667 9.24 11.42 4.25l1.158 1.103z"></path></svg></span
+                                          >100% guarantee viruses removed</a
+                                        >
+                                        <a class="collapse-btn btn expandLabel d-none" data-bs-toggle="collapse" data-bs-target="#collapse--19227119-expand" href="#" aria-expanded="false" aria-controls="collapse--19227119-expand"
+                                          ><span class="collapse-icon"
+                                            ><svg width="16px" height="16px" viewBox="0 0 16 16"><path fill="#24BC98" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm4.58-10.648L6.666 11.56 3.42 8.152l1.158-1.103L6.667 9.24 11.42 4.25l1.158 1.103z"></path></svg></span
+                                          >100% guarantee viruses removed</a
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cmp-richtext placeholder-glow">
+                          <div class="richtext" id="richtext-77bd45371a">
+                            <div class="offer-terms">* Price shown is for first year. See <a title="Offer Terms" aria-label="Offer Terms" data-pagesection="hero" data-navelement="offer-terms" href="#offerterms" target="_self">offer details</a> below.</div>
+                            <div class="payment-cards" data-payment-methods="true" data-payment-initialized="true">
+                              <span id="paymenttypeicon_CreditCard" title="VISA" alt="VISA" data-pimage="visa" class="pay-icon visa me-1"></span><span id="paymenttypeicon_CreditCard" title="MASTER CARD" alt="MASTER CARD" data-pimage="mastercard" class="pay-icon mastercard me-1"></span
+                              ><span id="paymenttypeicon_CreditCard" title="AMERICAN EXPRESS" alt="AMERICAN EXPRESS" data-pimage="americanexpress" class="pay-icon americanexpress me-1"></span><span id="paymenttypeicon_CreditCard" title="DISCOVER" alt="DISCOVER" data-pimage="discover" class="pay-icon discover me-1"></span
+                              ><span id="paymenttypeicon_CreditCard" title="PayPal" alt="PayPal" data-pimage="paypal" class="pay-icon paypal me-1"></span>
+                            </div>
+                            <div class="os-supported">Windows® | macOS® | Android™ | iOS® | ChromeOS®</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cmp-sectionpicker">
+      <div class="image-blade-content var1">
+        <div class="cmp-imageblade placeholder-glow">
+          <div class="section section-color primary" id="section-1781347170" data-attribute-section-tag="features">
+            <div class="section-content">
+              <div class="image-blade-section row flex-row-reverse">
+                <div class="image-blade-col1 image-blades"><img class="blade-image" src="https://media.mcafeeassets.com/content/dam/npcld/ecommerce/en-gb/atp/scam-detector/scam-detector-blade.png" height="447" width="553" alt="scam detector" /></div>
+                <div class="image-blade-col2 blade-content">
+                  <div class="cmp-richtext placeholder-glow">
+                    <div class="richtext" id="richtext-d6385bb52f">
+                      <div class="section-badge">
+                        <span class="section-badge-label">NEW</span>
+                        <div class="section-pre-title"><b>Scam Detector</b></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cmp-image placeholder-glow"></div>
+                  <div class="cmp-richtext placeholder-glow">
+                    <div class="richtext" id="richtext-1525e7d65a">
+                      <h2 class="section-title"><b>Stay one step ahead of scammers</b></h2>
+                      <div class="section-description">Connect and share confidently, knowing we’ll help protect you from <b>text, email, and deepfake video scams</b>. Scam Detector analyzes suspicious links, messages, and even screenshots—so you don’t have to guess. <b>We’ll identify scams before you click and can even block risky sites if you do.</b></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
