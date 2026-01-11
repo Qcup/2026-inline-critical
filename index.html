@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>inline critical CSS example</title>
     <link rel="preload" href="/assets/fonts/poppins-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- 1. Inline critical CSS -->
     <style>
       :root {
         --Gap: 1rem;
@@ -1299,8 +1300,17 @@
         transition: background 0.15s, box-shadow 0.1s;
       }
     </style>
-    <!-- Load Bootstrap non-blocking -->
+    <!-- 2. Bootstrap (external, non-blocking) -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" /> </noscript>
+    <!-- 3. Your mobile-first CSS -->
+    <!-- <link rel="stylesheet" href="css/mobile.css">  -->
+    <!-- 4. Your desktop overrides -->
+    <!-- <link rel="stylesheet" href="css/desktop.css" media="(min-width: 768px)"> -->
+    <!-- 5. Your additional external CSS (non-critical) -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="css/extra.css" /></noscript>
     <noscript> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" /> </noscript>
   </head>
   <body>
@@ -1805,6 +1815,330 @@
                       <h2 class="section-title"><b>Stay one step ahead of scammers</b></h2>
                       <div class="section-description">Connect and share confidently, knowing we’ll help protect you from <b>text, email, and deepfake video scams</b>. Scam Detector analyzes suspicious links, messages, and even screenshots—so you don’t have to guess. <b>We’ll identify scams before you click and can even block risky sites if you do.</b></div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- compchart -->
+    <section class="cmp-sectionpicker">
+      <div class="three-plan-comparator var1">
+        <div class="cmp-section placeholder-glow">
+          <div class="section section-color primary" id="section-1884501900" data-attribute-section-tag="comparison">
+            <div class="section-content">
+              <div class="cmp-richtext placeholder-glow">
+                <div class="richtext" id="richtext-4dc97488c0">
+                  <h2 class="section-title"><a id="seeAllBenefits"></a>Pick a plan just right for you</h2>
+                </div>
+              </div>
+              <div class="htmlcomponentreference">
+                <div class="comparison row">
+                  <div class="feature-column">
+                    <div class="feature-card">
+                      <div class="feature-card-conatiner">
+                        <div class="feature-card-text">
+                          <!---->
+                          <h3 class="feature-card-title">Features</h3>
+                          <div class="feature-card-content">
+                            <ul class="feature-card-column">
+                              <li class="feature-list-item mt-0 mb-2" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Automatic scam protection for text, email, and video.">Scam Detector</li>
+                              <li class="feature-list-title">Identity</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="We'll alert you to credit activity and if unauthorized, you can act to help prevent fraud or identity theft.">Credit monitoring</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Stay on top of changes to your credit report and score, from a single location.">Credit score</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Avoid damage to your credit by preventing unauthorized new accounts or access to your existing accounts with credit, bank or utility freezes.">Security freeze</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Avoid damage to your credit by preventing unauthorized new accounts or access to your existing accounts with credit, bank or utility freezes.">Transaction monitoring</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Get coverage for lost funds and expenses involved in restoring your identity - including coverage for losses to your 401(k) accounts.">$1M identity theft coverage</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="If your IDs, credit and debit cards are lost or stolen, we'll help you get them cancelled and replaced with minimal effort for you.">Lost wallet protection</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Our licensed experts help restore your identity should the unexpected happen.">Identity restoration experts</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Monitor up to 60 unique types of personal information on the dark web with alerts up to 10 months sooner than similar services.">Identity monitoring</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Secure your accounts by generating and storing complex passwords and auto-filling your info for faster logins across devices.">Password manager</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Quickly lock and unlock your credit to help prevent the unauthorized opening of accounts in your name.">Credit lock</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="In the event of a ransomware attack, where a hacker takes control of your personal data and demands payment, you're covered up to $25K for financial loss as part of your identity theft coverage.">
+                                $25k ransomware coverage
+                              </li>
+                              <li class="feature-list-title">Privacy</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Get help to remove your personal info from old online accounts still holding onto it. Just enter your Gmail or Microsoft (Outlook, Hotmail, MSN, etc.) email address.">Online Account Cleanup</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Help prevent your personal info from being sold online by scanning over 40 high-risk data broker sites for your personal info so it can be removed.">Personal Data Cleanup</li>
+                              <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Stay private and secure on public Wi-Fi with VPN that connects automatically when you need it.">VPN - virtual private network</li>
+                              <li class="feature-list-title">Security</li>
+                            </ul>
+                          </div>
+                          <div class="feature-collapse">
+                            <a data-bs-toggle="collapse" href="#viewall_individual" role="button" aria-expanded="false" aria-controls="viewall_individual"> View all included </a>
+                            <div class="feature-collapse-items collapse" id="viewall_individual">
+                              <ul class="feature-card-column">
+                                <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Protect all your personal devices and the info on them from the latest threats with award-winning antivirus.">Antivirus</li>
+                                <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Delete sensitive files completely to ensure no traces are left behind.">File shredder</li>
+                                <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Browse confidently knowing you're protected with color coded links to identify malware and phishing sites.">Web protection</li>
+                                <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Secure your firewall and block hackers from accessing your home network.">Firewall</li>
+                                <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Get technical assistance and peace of mind from our dedicated team and support knowledge-base.">Expert online support</li>
+                                <li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Industry-first Protection Score lets you see how safe you are online and easily fix weak spots to boost your score.">Protection Score</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offers-row row">
+                    <div class="offer-column col">
+                      <div class="offer-card">
+                        <!---->
+                        <div class="offer-card-body">
+                          <div class="offer-card-content">
+                            <div class="offer-card-text">
+                              <div class="company-logo">McAfee<span class="plus-icon">+</span></div>
+                              <h3 class="offer-title">Advanced<!----></h3>
+                            </div>
+                            <div class="divider-grey"></div>
+                            <div class="price-block">
+                              <div class="final-price">
+                                <span class="rte_ddr">$59.99<sup>*</sup></span
+                                ><!---->
+                              </div>
+                              <div class="retail-price">$199.99</div>
+                              <div class="offer-discountdescription">
+                                <span class="discount-description">Save</span>&nbsp;<span class="discount-price">$140.00</span>
+                                <!---->
+                              </div>
+                              <!---->
+                            </div>
+                            <div class="button" id="addtocart-plan1">
+                              <a
+                                class="button-label btn"
+                                data-buynow-click="true"
+                                data-nav-element-click="true"
+                                data-offer-bind="sp1"
+                                data-button-section-tag="compare"
+                                aria-label="compare:Renew Now"
+                                aria-disabled="false"
+                                href="https://www.mcafee.com/consumer/en-us/ipz/checkout/2web/payment.html?tm_local_lp_ab_test_variant=expops-1126_en-us_atp_dpp_pre_upsell_cl&amp;adobe_mc_sdid=SDID%3D126CAA963BB90C38-4CC52938F91A8783%7CMCORGID%3DA729776A5245B1590A490D44%40AdobeOrg%7CTS%3D1767671374&amp;moguid=7f3bd82f-20f2-44d6-87f9-3b23879ad6e6&amp;culture=en-us&amp;affid=1660&amp;osn=default&amp;pkgCode=mai_663&amp;pt=1yp&amp;fp=59.99&amp;curCode=usd&amp;btnSec=compare&amp;tua=1&amp;cctype=expiry&amp;ccstype=default&amp;cseg=default&amp;cexp=&amp;ccta=mai_663%3A1yp%3A59.99%3Ausd%3Acompare&amp;ccpubn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault%40mai_663%3A1yp%3A59.99%3Ausd%3Acompare&amp;ccpun=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault&amp;ccpn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl&amp;csrc=&amp;csrcl2=&amp;cls=0&amp;cupf=0&amp;cafcat=&amp;ccoe=&amp;ccoel2=&amp;ak_culture=&amp;ipst=&amp;ipcon=&amp;origin=macrometa"
+                                data-ccpubn="en-us:lp:atp:exp:standard-pre_cl@:default@mai_663:1yp:59.99:usd:compare"
+                                data-navigation-element="expiry|default|663:compare:renew-now"
+                                data-packagecode="663"
+                                data-plantype="1yp"
+                                data-finalprice="59.99"
+                                data-currencycode="usd"
+                                data-section="compare"
+                                data-__p3_preload="0">
+                                Renew Now
+                              </a>
+                            </div>
+                            <div class="feature-card-content">
+                              <ul class="feature-card-column">
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="divider-grey"></li>
+                                <div><li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="We'll alert you to credit activity with one credit bureau so you can take action on unauthorized activity that could indicate fraud or identity theft.">1 bureau</li></div>
+                                <div><li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Stay on top of monthly changes to your credit report and score, from a single location.">Monthly</li></div>
+                                <div><li class="cmp-checkmark">&nbsp;</li></div>
+                                <div><li class="cmp-checkmark">&nbsp;</li></div>
+                                <div><li class="cmp-checkmark">&nbsp;</li></div>
+                                <div><li class="cmp-checkmark">&nbsp;</li></div>
+                                <div><li class="cmp-checkmark">&nbsp;</li></div>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <li class="divider-grey my-4"></li>
+                                <div><li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Regularly scans for and then removes your personal info from over 40 high-risk data broker sites.">Scans</li></div>
+                                <div><li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Regularly scans for and then removes your personal info from over 40 high-risk data broker sites.">Full-service</li></div>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="divider-grey my-4"></li>
+                              </ul>
+                            </div>
+                            <div class="feature-collapse-items collapse" id="viewall_individual">
+                              <ul class="feature-card-column">
+                                <div><li class="feature-list-item">Unlimited devices*</li></div>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offers-row row">
+                    <div class="offer-column col">
+                      <div class="offer-card">
+                        <!---->
+                        <div class="offer-card-body">
+                          <div class="offer-card-content">
+                            <div class="offer-card-text">
+                              <div class="company-logo">McAfee<span class="plus-icon">+</span></div>
+                              <h3 class="offer-title">Premium<!----></h3>
+                            </div>
+                            <div class="divider-grey"></div>
+                            <div class="price-block">
+                              <div class="final-price">
+                                <span class="rte_ddr"
+                                  >$39.99<sup>*</sup
+                                  ><!----></span
+                                >
+                              </div>
+                              <div class="retail-price">$149.99</div>
+                              <div class="offer-discountdescription">
+                                <span class="discount-description">Save</span>&nbsp;<span class="discount-price">$110.00</span>
+                                <!---->
+                              </div>
+                              <!----><!---->
+                            </div>
+                            <div class="button" id="addtocart-plan1">
+                              <a
+                                class="button-label btn"
+                                data-buynow-click="true"
+                                data-nav-element-click="true"
+                                data-offer-bind="sp2"
+                                data-button-section-tag="compare"
+                                aria-label="compare:Renew Now"
+                                aria-disabled="false"
+                                href="https://www.mcafee.com/consumer/en-us/ipz/checkout/2web/payment.html?tm_local_lp_ab_test_variant=expops-1126_en-us_atp_dpp_pre_upsell_cl&amp;adobe_mc_sdid=SDID%3D126CAA963BB90C38-4CC52938F91A8783%7CMCORGID%3DA729776A5245B1590A490D44%40AdobeOrg%7CTS%3D1767671374&amp;moguid=454b97b1-2931-425c-aa77-f086ff28221e&amp;culture=en-us&amp;affid=1660&amp;osn=default&amp;pkgCode=mpri_665&amp;pt=1yp&amp;fp=39.99&amp;curCode=usd&amp;btnSec=compare&amp;cctype=expiry&amp;ccstype=default&amp;cseg=default&amp;cexp=&amp;ccta=mpri_665%3A1yp%3A39.99%3Ausd%3Acompare&amp;ccpubn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault%40mpri_665%3A1yp%3A39.99%3Ausd%3Acompare&amp;ccpun=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault&amp;ccpn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl&amp;csrc=&amp;csrcl2=&amp;cls=0&amp;cupf=0&amp;cafcat=&amp;ccoe=&amp;ccoel2=&amp;ak_culture=&amp;ipst=&amp;ipcon=&amp;origin=macrometa"
+                                data-ccpubn="en-us:lp:atp:exp:standard-pre_cl@:default@mpri_665:1yp:39.99:usd:compare"
+                                data-navigation-element="expiry|default|665:compare:renew-now"
+                                data-packagecode="665"
+                                data-plantype="1yp"
+                                data-finalprice="39.99"
+                                data-currencycode="usd"
+                                data-section="compare"
+                                data-__p3_preload="0">
+                                Renew Now
+                              </a>
+                            </div>
+                            <div class="feature-card-content">
+                              <ul class="feature-card-column">
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="divider-grey"></li>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <li class="divider-grey my-4"></li>
+                                <div><li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Enter Scans Scan over 40 high-risk data broker sites for your personal info. Includes guidance to remove it.Value">Scans</li></div>
+                                <div><li class="feature-list-item" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Enter Scans Scan over 40 high-risk data broker sites for your personal info. Includes guidance to remove it.Value">Scans</li></div>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="divider-grey my-4"></li>
+                              </ul>
+                            </div>
+                            <div class="feature-collapse-items collapse" id="viewall_individual">
+                              <ul class="feature-card-column">
+                                <div><li class="feature-list-item">Unlimited devices*</li></div>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offers-row row">
+                    <div class="offer-column col">
+                      <div class="offer-card">
+                        <div class="offer-card-badge">Recommended</div>
+                        <div class="offer-card-body">
+                          <div class="offer-card-content">
+                            <div class="offer-card-text">
+                              <div class="company-logo">McAfee<!----></div>
+                              <h3 class="offer-title">Basic<!----></h3>
+                            </div>
+                            <div class="divider-grey"></div>
+                            <div class="price-block">
+                              <div class="final-price">
+                                <span class="rte_ddr"
+                                  >$19.99<sup>*</sup
+                                  ><!----></span
+                                >
+                              </div>
+                              <div class="retail-price">$89.99</div>
+                              <div class="offer-discountdescription">
+                                <span class="discount-description">Save</span>&nbsp;<span class="discount-price">$70.00</span>
+                                <!---->
+                              </div>
+                              <!----><!---->
+                            </div>
+                            <div class="button" id="addtocart-plan1">
+                              <a
+                                class="button-label btn"
+                                data-buynow-click="true"
+                                data-nav-element-click="true"
+                                data-offer-bind="sp3"
+                                data-button-section-tag="compare"
+                                aria-label="compare:Renew Now"
+                                aria-disabled="false"
+                                href="https://www.mcafee.com/consumer/en-us/ipz/checkout/2web/payment.html?tm_local_lp_ab_test_variant=expops-1126_en-us_atp_dpp_pre_upsell_cl&amp;adobe_mc_sdid=SDID%3D126CAA963BB90C38-4CC52938F91A8783%7CMCORGID%3DA729776A5245B1590A490D44%40AdobeOrg%7CTS%3D1767671374&amp;moguid=2c32131f-4a76-4203-b670-f2d48dc643d7&amp;culture=en-us&amp;affid=1660&amp;osn=default&amp;pkgCode=mls_539&amp;pt=1yp&amp;fp=19.99&amp;curCode=usd&amp;btnSec=compare&amp;cctype=expiry&amp;ccstype=default&amp;cseg=default&amp;cexp=&amp;ccta=mls_539%3A1yp%3A19.99%3Ausd%3Acompare&amp;ccpubn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault%40mls_539%3A1yp%3A19.99%3Ausd%3Acompare&amp;ccpun=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl%40%3Adefault&amp;ccpn=en-us%3Alp%3Aatp%3Aexp%3Astandard-pre_cl&amp;csrc=&amp;csrcl2=&amp;cls=0&amp;cupf=0&amp;cafcat=&amp;ccoe=&amp;ccoel2=&amp;ak_culture=&amp;ipst=&amp;ipcon=&amp;origin=macrometa"
+                                data-ccpubn="en-us:lp:atp:exp:standard-pre_cl@:default@mls_539:1yp:19.99:usd:compare"
+                                data-navigation-element="expiry|default|539:compare:renew-now"
+                                data-packagecode="539"
+                                data-plantype="1yp"
+                                data-finalprice="19.99"
+                                data-currencycode="usd"
+                                data-section="compare"
+                                data-__p3_preload="0">
+                                Renew Now
+                              </a>
+                            </div>
+                            <div class="feature-card-content">
+                              <ul class="feature-card-column">
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="divider-grey"></li>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <li class="divider-grey my-4"></li>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <div><li class="cmp-ecllipse">&nbsp;</li></div>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="divider-grey my-4"></li>
+                              </ul>
+                            </div>
+                            <div class="feature-collapse-items collapse" id="viewall_individual">
+                              <ul class="feature-card-column">
+                                <div><li class="feature-list-item">1 device*</li></div>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                                <li class="cmp-checkmark">&nbsp;</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cmp-richtext placeholder-glow">
+                <div class="richtext" id="richtext-c7f2963436">
+                  <div class="offer-terms">
+                    *First term price. Introductory Pricing for New Customers. <a title="Offer Term Details" aria-label="Offer Term Details" data-pagesection="compare chart" data-navelement="offer-terms" href="#offerterms" target="_self"><span class="rteFontColor fc-hilite">See offer details.</span></a>
                   </div>
                 </div>
               </div>
